@@ -99,12 +99,26 @@ function Divided() {
         className="max-w-[1000px] relative mx-auto mt-10 px-10 max-sm:px-2 max-sm:py-16 max-sm:w-[95%]"
       >
         {/* Subtitle Section */}
-        <div className="border border-[#ffffff1a] text-white nav relative text-sm max-xs:text-sm bg-[#ffffff0a] rounded-full py-1 px-3 w-fit mx-auto">
+        <div
+          data-aos="fade-up"
+          data-aos-anchor-placement="bottom-bottom"
+          data-aos-easing="ease-out-back"
+          data-aos-duration="1000"
+          data-aos-offset="100"
+          data-aos-mirror="true"
+          className="border border-[#ffffff1a] text-white nav relative text-sm max-xs:text-sm bg-[#ffffff0a] rounded-full py-1 px-3 w-fit mx-auto"
+        >
           <p className="opacity-70 font-inter">{sectionConfig.subtitle}</p>
         </div>
 
         {/* Description Section */}
         <div
+          data-aos="fade-up"
+          data-aos-anchor-placement="bottom-bottom"
+          data-aos-easing="ease-out-back"
+          data-aos-duration="1000"
+          data-aos-offset="100"
+          data-aos-mirror="true"
           className="max-xs:-mt-1 flex-col flex items-center justify-center pb-2 max-w-[650px] mt-5 leading-[1.3em] mx-auto text-center text-2xl px-3 
            font-inter font-medium capitalize hero-heading"
         >
@@ -114,7 +128,15 @@ function Divided() {
         {/* Features Section */}
 
         <div className="">
-          <h2 className="font-lobster text-center my-14 text-5xl hero-heading">
+          <h2
+            data-aos="fade-up"
+            data-aos-anchor-placement="bottom-bottom"
+            data-aos-easing="ease-out-back"
+            data-aos-duration="1000"
+            data-aos-offset="100"
+            data-aos-mirror="true"
+            className="font-lobster text-center my-14 text-5xl hero-heading"
+          >
             {sectionConfig.featuresTitle}
           </h2>
 
@@ -131,7 +153,15 @@ function Divided() {
             ))}
           </div>
         </div>
-        <div className="">
+        <div
+          data-aos="fade-up"
+          data-aos-anchor-placement="bottom-bottom"
+          data-aos-easing="ease-out-back"
+          data-aos-duration="1000"
+          data-aos-offset="100"
+          data-aos-mirror="true"
+          className=""
+        >
           <h2 className="font-lobster text-center my-14  text-5xl hero-heading">
             Measurable impacts
           </h2>
@@ -158,7 +188,15 @@ function Divided() {
 // Separate component for feature card
 const FeatureCard = ({ icon, title, alt, index, totalItems }) => {
   return (
-    <div className={"font-inter border border-[#ffffff1a] p-6 rounded-lg  "}>
+    <div
+      data-aos="fade-up"
+      data-aos-anchor-placement="bottom-bottom"
+      data-aos-easing="ease-out-back"
+      data-aos-duration="1000"
+      data-aos-offset="100"
+      data-aos-mirror="true"
+      className={"font-inter border border-[#ffffff1a] p-6 rounded-lg  "}
+    >
       {/* Add relative z-10 to ensure content stays above hover effects */}
       <div className="border border-[#75d5a867] p-2 rounded-full w-fit mx-auto relative ">
         <img

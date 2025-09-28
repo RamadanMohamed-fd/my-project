@@ -6,27 +6,15 @@ function About() {
       <div className="line-break"></div>
       <div className="max-w-[900px] relative z-50 mx-auto pt-20">
         <div className="max-w-[600px] mx-auto relative  ">
-          {/* <img
-          src="/images/logo.png"
-          alt="alis"
-          width={900}
-          height={400}
-          className="w-[350px] h-auto"
-        /> */}
-          {/* <div className="border border-[#2d2641] group  rounded-full w-[140px] h-[40px] my-4 cursor-pointer nav bgh relative z-10 bg-[hsla(0,0%,100%,.03)] backdrop-blur-sm">
-          <div className=" nav-link w-full flex items-center gap-3 h-full relative z-[51] text-[#551A8B] font-inter">
-            <p className=" text-white ">About us </p>
-          </div>
-        </div> */}
           <p className=" font-lobster font-semibold text-6xl hero-heading mt-10 mb-14">
             About Us{" "}
           </p>
-          <div className="space-y-5 hero-heading">
-            <p className="text-lg font-medium  max-sm:text-lg max-xs:text-base leading-[1.6em] tracking-wider font-inter">
+          <div className="space-y-5 z-30 hero-heading">
+            <div className="text-lg font-medium  max-sm:text-lg max-xs:text-base leading-[1.6em] tracking-wider font-inter">
               Clinical dietitians worldwide face a considerable burden when
               dealing with critically ill patients in the intensive care unit
               (ICU) settings.
-            </p>
+            </div>
             <p className=" text-lg font-medium  max-sm:text-lg max-xs:text-base leading-[1.6em] tracking-wider font-inter">
               These inevitable daily challenges include calculating the energy
               and nutrients needs, the time consumed performing those

@@ -6,7 +6,6 @@ import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Contact from "./components/Contact";
-import "./components/AnimatedBeam";
 import Divided from "./components/Divided";
 import AnimatedBeamDemo from "./components/Partaner";
 import Counter from "./components/Counter";
@@ -18,9 +17,8 @@ function App() {
       duration: 800,
       easing: "ease-in-out",
       once: true, // Animation only happens once
-      mirror: false,
+      mirror: true,
       anchorPlacement: "top-bottom",
-
       // You can add more settings as needed
     });
 

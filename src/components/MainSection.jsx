@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 
 function MainSection() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -29,32 +29,43 @@ function MainSection() {
     },
   ];
 
-  const goToSlide = (index) => {
-    if (isTransitioning || index === currentSlide) return;
-    setIsTransitioning(true);
-    setCurrentSlide(index);
-    setTimeout(() => setIsTransitioning(false), 1200);
-    startAutoSlide();
-  };
-
-  const nextSlide = React.useCallback(
-    () => goToSlide((currentSlide + 1) % slides.length),
-    [currentSlide, slides.length]
+  // Move goToSlide inside useCallback to avoid dependency issues
+  const goToSlide = useCallback(
+    (index) => {
+      if (isTransitioning || index === currentSlide) return;
+      setIsTransitioning(true);
+      setCurrentSlide(index);
+      setTimeout(() => setIsTransitioning(false), 1200);
+    },
+    [isTransitioning, currentSlide]
   );
-  const prevSlide = () =>
-    goToSlide((currentSlide - 1 + slides.length) % slides.length);
 
-  const startAutoSlide = React.useCallback(() => {
+  const nextSlide = useCallback(() => {
+    goToSlide((currentSlide + 1) % slides.length);
+  }, [currentSlide, slides.length, goToSlide]);
+
+  const prevSlide = useCallback(() => {
+    goToSlide((currentSlide - 1 + slides.length) % slides.length);
+  }, [currentSlide, slides.length, goToSlide]);
+
+  const startAutoSlide = useCallback(() => {
     if (intervalRef.current) clearInterval(intervalRef.current);
     intervalRef.current = setInterval(() => {
-      if (!isTransitioning) nextSlide();
+      if (!isTransitioning) {
+        nextSlide();
+      }
     }, 6000);
   }, [isTransitioning, nextSlide]);
 
   useEffect(() => {
     startAutoSlide();
-    return () => intervalRef.current && clearInterval(intervalRef.current);
-  }, [isTransitioning, startAutoSlide]);
+    return () => {
+      if (intervalRef.current) clearInterval(intervalRef.current);
+    };
+  }, [startAutoSlide]);
+
+  // Alternative approach without useCallback (simpler):
+  // If you don't need the optimization, you can remove useCallback entirely:
 
   return (
     <div

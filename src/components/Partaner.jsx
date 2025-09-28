@@ -1,7 +1,19 @@
 import React, { forwardRef, useRef } from "react";
 
 const Circle = forwardRef(({ className, children }, ref) => {
-  return <div className={`${className} z-30 `}>{children}</div>;
+  return (
+    <div
+      data-aos="fade-up"
+      data-aos-anchor-placement="bottom-bottom"
+      data-aos-easing="ease-out-back"
+      data-aos-duration="1000"
+      data-aos-offset="100"
+      data-aos-mirror="true"
+      className={`${className} z-30 `}
+    >
+      {children}
+    </div>
+  );
 });
 
 Circle.displayName = "Circle";
@@ -16,7 +28,15 @@ export default function AnimatedBeamMultipleOutputDemo({ className }) {
   return (
     <div id="partaner" className="w-full pb-20 max-sm:pb-0 bgh5 relative ">
       <div className="line-break"></div>
-      <h3 className="hero-heading text-7xl font-inter font-semibold pt-20 mb-10 text-center">
+      <h3
+        data-aos="fade-up"
+        data-aos-anchor-placement="bottom-bottom"
+        data-aos-easing="ease-out-back"
+        data-aos-duration="1000"
+        data-aos-offset="100"
+        data-aos-mirror="true"
+        className="hero-heading text-7xl font-inter font-semibold pt-20 mb-10 text-center"
+      >
         Our Partaner
       </h3>
       <div
@@ -64,44 +84,6 @@ export default function AnimatedBeamMultipleOutputDemo({ className }) {
             </Circle>
           </div>
         </div>
-
-        {/* AnimatedBeams */}
-        {/* <AnimatedBeam
-          containerRef={containerRef}
-          fromRef={div1Ref}
-          toRef={div6Ref}
-          duration={3}
-        />
-        <AnimatedBeam
-          containerRef={containerRef}
-          fromRef={div2Ref}
-          toRef={div6Ref}
-          duration={3}
-        />
-        <AnimatedBeam
-          containerRef={containerRef}
-          fromRef={div3Ref}
-          toRef={div6Ref}
-          duration={3}
-        />
-        <AnimatedBeam
-          containerRef={containerRef}
-          fromRef={div4Ref}
-          toRef={div6Ref}
-          duration={3}
-        />
-        <AnimatedBeam
-          containerRef={containerRef}
-          fromRef={div5Ref}
-          toRef={div6Ref}
-          duration={3}
-        />
-        <AnimatedBeam
-          containerRef={containerRef}
-          fromRef={div6Ref}
-          toRef={div7Ref}
-          duration={3}
-        /> */}
       </div>
     </div>
   );

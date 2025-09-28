@@ -5,10 +5,24 @@ function Techsection() {
 
       <div className="  z-10 relative  mt-12 max-xs:mt-8 max-w-[1300px] h-full mx-auto">
         <div className="w-full h-full relative">
-          <div className="border border-[#ffffff1a] text-white nav relative text-sm max-xs:text-sm bg-[#ffffff0a] rounded-full py-1 px-3  w-fit mx-auto">
+          <div
+            data-aos="fade-up"
+            data-aos-anchor-placement="bottom-bottom"
+            data-aos-easing="ease-out-back"
+            data-aos-duration="1000"
+            data-aos-offset="100"
+            data-aos-mirror="true"
+            className="border border-[#ffffff1a] text-white nav relative text-sm max-xs:text-sm bg-[#ffffff0a] rounded-full py-1 px-3  w-fit mx-auto"
+          >
             <p className=" opacity-70  font-inter"> Finally</p>
           </div>
           <div
+            data-aos="fade-up"
+            data-aos-anchor-placement="bottom-bottom"
+            data-aos-easing="ease-out-back"
+            data-aos-duration="1000"
+            data-aos-offset="100"
+            data-aos-mirror="true"
             className=" max-xs:-mt-1 flex items-center justify-center pb-2 max-w-[700px] mt-5 leading-[1.3em] mx-auto text-center text-3xl px-3 
            font-inter font-medium  capitalize hero-heading"
           >

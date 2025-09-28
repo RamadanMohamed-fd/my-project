@@ -8,11 +8,25 @@ function Counter() {
     >
       <div className="line-break"></div>
       <div className=" max-w-[920px] relative mx-auto  mt-10 px-10  max-sm:px-2 max-sm:py-16  max-sm:w-[95%]">
-        <div className="border border-[#ffffff1a] text-white nav relative text-sm max-xs:text-sm bg-[#ffffff0a] rounded-full py-1 px-3  w-fit mx-auto">
+        <div
+          data-aos="fade-up"
+          data-aos-anchor-placement="bottom-bottom"
+          data-aos-easing="ease-out-back"
+          data-aos-duration="1000"
+          data-aos-offset="100"
+          data-aos-mirror="true"
+          className="border border-[#ffffff1a] text-white nav relative text-sm max-xs:text-sm bg-[#ffffff0a] rounded-full py-1 px-3  w-fit mx-auto"
+        >
           <p className=" opacity-70  font-inter">Our Achievements</p>
         </div>
 
         <div
+          data-aos="fade-up"
+          data-aos-anchor-placement="bottom-bottom"
+          data-aos-easing="ease-out-back"
+          data-aos-duration="1000"
+          data-aos-offset="100"
+          data-aos-mirror="true"
           className=" max-xs:-mt-1 flex-col flex items-center justify-center pb-2 max-w-[850px] mt-5 leading-[1.2em] mx-auto text-center text-3xl px-3 
            font-inter font-medium  capitalize hero-heading"
         >
@@ -28,7 +42,15 @@ function Counter() {
         </div>
         <div className=" relative z-20 mt-5  grid gap-4 max-xs:gap-2 grid-cols-2 justify-center items-center ">
           <div className=" relative  ">
-            <div className=" absolute bottom-8 left-8 max-xs:bottom-4 max-xs:left-4">
+            <div
+              data-aos="fade-up"
+              data-aos-anchor-placement="bottom-bottom"
+              data-aos-easing="ease-out-back"
+              data-aos-duration="1000"
+              data-aos-offset="100"
+              data-aos-mirror="true"
+              className=" absolute bottom-8 left-8 max-xs:bottom-4 max-xs:left-4"
+            >
               <div className=" size-[48px] max-xs:size-10 flexCenter border border-[#ffffff62] rounded-full">
                 <div className="size-[40px] max-xs:size-9 p-1 flexCenter border border-[#ffffff88 bg-[#ffffff27] rounded-full">
                   <img
@@ -58,7 +80,11 @@ function Counter() {
               className=""
             />
           </div>
-          <div className=" relative ">
+          <div
+            data-aos="fade-up"
+            data-aos-anchor-placement="bottom-bottom"
+            className=" relative "
+          >
             <div className=" absolute bottom-8 left-8 max-xs:bottom-4 max-xs:left-4">
               <div className=" size-[48px] max-xs:size-10 flexCenter border border-[#ffffff62] rounded-full">
                 <div className="size-[40px] flexCenter max-xs:size-9 p-1 flexCenter border border-[#ffffff88 bg-[#ffffff27] rounded-full">
@@ -90,7 +116,15 @@ function Counter() {
               className="  "
             />
           </div>
-          <div className=" relative">
+          <div
+            data-aos="fade-up"
+            data-aos-anchor-placement="bottom-bottom"
+            data-aos-easing="ease-out-back"
+            data-aos-duration="1000"
+            data-aos-offset="100"
+            data-aos-mirror="true"
+            className=" relative"
+          >
             <div className=" absolute top-8 left-8 max-xs:top-4 max-xs:left-4">
               <div className=" size-[48px] max-xs:size-10 flexCenter border border-[#ffffff62] rounded-full">
                 <div className="size-[40px] max-xs:size-9 p-1 flexCenter border border-[#ffffff88 bg-[#ffffff27] rounded-full">
@@ -122,7 +156,15 @@ function Counter() {
               className=" rotate-180  "
             />
           </div>
-          <div className="   relative">
+          <div
+            data-aos="fade-up"
+            data-aos-anchor-placement="bottom-bottom"
+            data-aos-easing="ease-out-back"
+            data-aos-duration="1000"
+            data-aos-offset="100"
+            data-aos-mirror="true"
+            className="   relative"
+          >
             <div className=" absolute top-8 left-8 max-xs:top-4 max-xs:left-4">
               <div className=" size-[48px] max-xs:size-10 flexCenter border border-[#ffffff62] rounded-full">
                 <div className="size-[40px] max-xs:size-9 p-1 flexCenter border border-[#ffffff88 bg-[#ffffff27] rounded-full">

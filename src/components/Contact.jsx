@@ -6,7 +6,15 @@ function Contact() {
     <div id="contact" className="w-full pb-5 bgh2 font-inter  ">
       <div className="line-break"></div>
       <div className="my-20 max-sm:my-10   relative">
-        <h2 className="hero-heading mb-10 relative z-[2] text-center text-7xl max-sm:text-4xl font-[600]">
+        <h2
+          data-aos="fade-up"
+          data-aos-anchor-placement="bottom-bottom"
+          data-aos-easing="ease-out-back"
+          data-aos-duration="1000"
+          data-aos-offset="100"
+          data-aos-mirror="true"
+          className="hero-heading mb-10 relative z-[2] text-center text-7xl max-sm:text-4xl font-[600]"
+        >
           Contact Us
         </h2>
 

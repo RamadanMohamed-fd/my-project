@@ -139,7 +139,15 @@ function ContactPopUp({ st, handle }) {
   }, []);
 
   return (
-    <div className="m-auto z-[100] relative w-[700px] px-3 font-inter max-md:w-full">
+    <div
+      data-aos="fade-up"
+      data-aos-anchor-placement="bottom-bottom"
+      data-aos-easing="ease-out-back"
+      data-aos-duration="1000"
+      data-aos-offset="100"
+      data-aos-mirror="true"
+      className="m-auto z-[100] relative w-[700px] px-3 font-inter max-md:w-full"
+    >
       <div className="w-full flex items-center justify-center px-5 py-12 form-step relative">
         {st && (
           <div

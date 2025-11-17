@@ -22,7 +22,7 @@ function Header() {
   const headerContainerClasses = `
     ${
       true
-        ? "fixed w-[760px] max-[800px]:h-screen top-5 max-[800px]:top-0 max-[800px]:right-0 z-[501] min-[800px]:mx-auto min-[800px]:left-[50%] min-[800px]:translate-x-[-50%]"
+        ? "fixed w-[760px] max-[800px]:h-screen top-1 max-[800px]:top-0 max-[800px]:right-0 z-[501] min-[800px]:mx-auto min-[800px]:left-[50%] min-[800px]:translate-x-[-50%]"
         : "hidden"
     } 
     ${

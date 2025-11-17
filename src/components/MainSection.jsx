@@ -38,7 +38,7 @@ function MainSection() {
     },
     {
       id: 4,
-      image: "header/4.jpg",
+      image: "header/66.webp",
       title: { en: "Silver Medal", ar: "الميدالية الفضية" },
       description: {
         en: "out of 1,100+ projects & 80+ countries at the Geneva International Inventions Exhibition 2025.",
@@ -97,7 +97,7 @@ function MainSection() {
   return (
     <div
       id="home"
-      className="relative z-[300] w-full h-screen overflow-hidden bg-black"
+      className="relative z-[300] w-full  h-screen overflow-hidden bg-black"
     >
       {/* Slides */}
       <div className="relative w-full h-full">
@@ -117,7 +117,9 @@ function MainSection() {
               <img
                 src={slide.image}
                 alt={content.title}
-                className="w-full h-full object-cover object-center"
+                className={`w-full  h-full object-cover object-[right_-60px] ${
+                  slide.id === 5 ? "!object-center" : ""
+                }`}
               />
 
               {/* LEFT/RIGHT OVERLAY */}
@@ -134,7 +136,7 @@ function MainSection() {
                 }`}
               >
                 <div
-                  className={`max-w-[680px]  px-4 py-8 max-md:text-center ${
+                  className={`max-w-[630px]  px-4 py-8 max-md:text-center ${
                     isRTL
                       ? "md:mr-16 md:ml-auto text-right"
                       : "md:ml-16 md:mr-auto text-left"

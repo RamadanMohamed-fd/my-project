@@ -1,11 +1,32 @@
+import React from "react";
+import { useLanguage } from "../context/LanguageContext";
 import ContactPopUp from "./ContactPopUp";
+
 function Contact() {
+  const { t, isRTL, currentLanguage } = useLanguage();
   const date = new Date();
 
+  const content = {
+    en: {
+      title: "Contact Us",
+      terms: "Terms and Conditions",
+      privacy: "Privacy Policy",
+      rights: "All Rights Reserved – iNutrical ©",
+    },
+    ar: {
+      title: "اتصل بنا",
+      terms: "الشروط والأحكام",
+      privacy: "سياسة الخصوصية",
+      rights: "جميع الحقوق محفوظة – iNutrical ©",
+    },
+  };
+
+  const currentContent = content[currentLanguage];
+
   return (
-    <div id="contact" className="w-full pb-5 bgh2 font-inter  ">
+    <div id="contact" className="w-full pb-5 bgh2 font-inter">
       <div className="line-break"></div>
-      <div className="my-20 max-sm:my-10   relative">
+      <div className="my-20 max-sm:my-10 relative">
         <h2
           data-aos="fade-up"
           data-aos-anchor-placement="bottom-bottom"
@@ -15,7 +36,7 @@ function Contact() {
           data-aos-mirror="true"
           className="hero-heading mb-10 relative z-[2] text-center text-7xl max-sm:text-4xl font-[600]"
         >
-          Contact Us
+          {currentContent.title}
         </h2>
 
         <ContactPopUp />
@@ -25,13 +46,13 @@ function Contact() {
       <div className="relative z-20">
         <div className="line-break"></div>
 
-        <div className="flex flex-wrap  gap-5 justify-between max-w-[1024px] px-2 mx-auto mt-7">
-          <div className="flex items-center justify-between w-full gap-5">
+        <div className="flex flex-wrap gap-5 justify-between max-w-[1024px] px-2 mx-auto mt-7">
+          <div className="flex items-center flex-wrap justify-between w-full gap-5">
             <div className="">
               <img
                 src="/images/logo.png"
                 alt="Logo"
-                className="w-[250px] pb-3  h-auto"
+                className="w-[250px] pb-3 h-auto"
               />
               <div className="flex gap-5 px-2 items-center">
                 <a
@@ -104,66 +125,10 @@ function Contact() {
                   </svg>
                 </a>
               </div>
-              <div className="flex items-center gap-2 mt-6 pl-2 ">
-                <img
-                  loading="lazy"
-                  src="/images/location.png"
-                  alt="location"
-                  width={32}
-                  height={32}
-                  className=" size-6 opacity-60"
-                />
-                <a
-                  aria-label="learn more about us"
-                  href="https://www.google.com/maps/place/N.+A.+Majestic+Apartment/@20.278097,85.860166,14z/data=!4m6!3m5!1s0x3a19a0a6389e8ec9:0x33712591060b90b1!8m2!3d20.2781058!4d85.8601428!16s%2Fg%2F11c44dlx11?hl=en-US&entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm  hover:underline duration-100 hover:text-white text-[#b5abcb] font-normal "
-                >
-                  67 | 22 Coworking Space King Abdul Aziz Road, AlMuruj district
-                </a>
-              </div>
-            </div>
-
-            <div className="flex  flex-col gap-4 max-w-[300px]  ">
-              <a
-                href="https://wa.me/01147598765"
-                className="flex items-center opacity-80 gap-x-2  "
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img
-                  loading="lazy"
-                  src="/images/phone.png"
-                  alt="phone"
-                  width={32}
-                  height={32}
-                  className=" size-6"
-                />
-                <p className="text-sm  hover:underline duration-100 hover:text-white text-[#b5abcb] font-normal ">
-                  01147598765
-                </p>
-              </a>
-              <a
-                href="mailto:connect@techindika.com"
-                className="flex items-center opacity-80 gap-x-2  "
-              >
-                <img
-                  loading="lazy"
-                  src="/images/mail.png"
-                  alt="email"
-                  width={32}
-                  height={32}
-                  className=" size-6"
-                />
-                <p className="text-sm  hover:underline duration-100 hover:text-white text-[#b5abcb] font-normal ">
-                  support@inutrical.com
-                </p>
-              </a>
-              <div className="flex  flex-wrap w-full justify-between">
+              <div className="flex mt-8 flex-wrap w-full justify-between">
                 <a
                   href="/terms"
-                  className="flex items-center opacity-80 gap-x-2  "
+                  className="flex items-center opacity-80 gap-x-2"
                 >
                   <img
                     loading="lazy"
@@ -171,18 +136,38 @@ function Contact() {
                     alt="terms"
                     width={32}
                     height={32}
-                    className=" size-6"
+                    className="size-6"
                   />
-                  <p className="text-sm  hover:underline duration-100 hover:text-white text-[#b5abcb] font-normal ">
-                    Terms and Conditions
+                  <p className="text-sm hover:underline duration-100 hover:text-white text-[#b5abcb] font-normal">
+                    {currentContent.terms}
+                  </p>
+                </a>
+              </div>
+              <div className="flex mt-4 flex-wrap w-full justify-between">
+                <a
+                  href="/terms"
+                  className="flex items-center opacity-80 gap-x-2"
+                >
+                  <img
+                    loading="lazy"
+                    src="/security.png"
+                    alt="terms"
+                    width={32}
+                    height={32}
+                    className="size-6"
+                  />
+                  <p className="text-sm hover:underline duration-100 hover:text-white text-[#b5abcb] font-normal">
+                    {currentContent.privacy}
                   </p>
                 </a>
               </div>
             </div>
+
+            <img src="/ksa.png" alt="ksa" className="w-[250px] h-auto" />
           </div>
 
-          <p className=" hero-heading text-sm mt-2 w-full pt-5 border-t border-opacity-10 border-white  max-[550px]:mb-0">
-            All Rights Reserved – iNutrical © {date.getFullYear()}
+          <p className="hero-heading text-sm mt-2 w-full pt-5 border-t border-opacity-10 border-white max-[550px]:mb-0">
+            {currentContent.rights} {date.getFullYear()}
           </p>
         </div>
       </div>

@@ -447,7 +447,7 @@ svg text {
   bottom: 5vh;
   z-index: 4 !important;
   display: block;
-  margin-top: 5px;
+  margin-top: 10px;
 }
 .sticky-2 {
   position: sticky;
@@ -462,7 +462,7 @@ svg text {
   position: sticky;
   bottom: 3vh;
   z-index: 2;
-  margin-top: 20px;
+  margin-top: 10px;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
@@ -477,8 +477,8 @@ svg text {
   align-items: center;
 }
 @media (max-width: 640px) {
-  .sticky-1, .sticky-3, .sticky-3, .sticky-4 {
-    position: static;
+  .sticky-1,.sticky-2, .sticky-3, .sticky-3, .sticky-4 {
+    position: static !important;
   }
 }
 .card-blur {
@@ -813,6 +813,53 @@ svg text {
     linear-gradient(to right, rgba(22, 22, 33, 0.95) 0%, rgba(22, 22, 33, 0.8) 40%, rgba(22, 22, 33, 0) 90%);
 }
 
+.banner-overlayl {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+
+  background: 
+    /* bottom dark fade */
+    linear-gradient(to top, rgba(22, 22, 33, 0.95) 0%, rgba(22, 22, 33, 0) 40%) ,
+
+    /* left-to-right dark fade */
+    linear-gradient(to left, rgba(22, 22, 33, 0.95) 0%, rgba(22, 22, 33, 0.8) 40%, rgba(22, 22, 33, 0) 90%);
+}
+@media (max-width:640px) {
+  .banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+
+  background: 
+    /* bottom dark fade */
+    linear-gradient(to top, rgba(22, 22, 33, 0.95) 0%, rgba(22, 22, 33, 0) 80%) ,
+
+    /* left-to-right dark fade */
+    linear-gradient(to right, rgba(22, 22, 33, 0.95) 0%, rgba(22, 22, 33, 0.8) 40%, rgba(22, 22, 33, 0) 90%);
+}
+  .banner-overlay1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+
+  background: 
+    /* bottom dark fade */
+    linear-gradient(to top, rgba(22, 22, 33, 0.95) 0%, rgba(22, 22, 33, 0) 80%) ,
+
+    /* left-to-right dark fade */
+    linear-gradient(to left, rgba(22, 22, 33, 0.95) 0%, rgba(22, 22, 33, 0.8) 40%, rgba(22, 22, 33, 0) 90%);
+}
+}
 .mas {
   -webkit-mask-image: -webkit-gradient(
     linear,
@@ -1314,4 +1361,36 @@ svg text {
     rgb(0, 0, 0) 87.5%,
     rgba(0, 0, 0, 0) 100%
   );
+}
+
+
+/* RTL Text Direction Support */
+.direction-rtl {
+  direction: rtl;
+  text-align: right;
+}
+
+.direction-ltr {
+  direction: ltr;
+  text-align: left;
+}
+
+/* Arabic font optimization */
+[lang="ar"] {
+  line-height: 1.8;
+}
+
+/* Better Arabic text rendering */
+.font-inter[lang="ar"] {
+  letter-spacing: 0;
+}
+
+/* RTL specific adjustments for hero text */
+[dir="rtl"] .hero-heading {
+  /* text-align: right; */
+  line-height: 1.6;
+}
+
+.linn{
+  z-index: 400 !important;
 }

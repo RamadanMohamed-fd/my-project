@@ -32,10 +32,11 @@ function App() {
   return (
     <div className="App">
       <MainSection />
-      <Techsection />
-      <Counter />
-      <Divided />
       <About />
+      <Divided />
+      <Counter />
+      <Techsection />
+
       <AnimatedBeamDemo />
       <Contact />
       <div className=" fixed top-0 left-0 w-full  h-screen z-10">

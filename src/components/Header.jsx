@@ -1,32 +1,36 @@
-import React, { useState } from "react";
+// eslint-disable-next-line jsx-a11y/anchor-is-valid
+import { useState } from "react";
+import { useLanguage } from "../context/LanguageContext";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 function Header() {
   const [show, setShow] = useState(false);
   const [showPopUp, setShowPopUp] = useState(false);
+  const { t, isRTL } = useLanguage();
 
-  // Dynamic navigation data
+  // Dynamic navigation data with translation keys
   const navItems = [
-    { href: "#home", label: "Inutrical" },
-    { href: "#teck", label: "Finally" },
-    { href: "#achievements", label: "Achievements" },
-    { href: "#care", label: "Care" },
-    { href: "#about", label: "About" },
-    { href: "#partaner", label: "Partners" },
-    { href: "#contact", label: "Contact" },
+    { href: "#about", key: "nav_about" },
+    { href: "#features", key: "nav_features" },
+    { href: "#impact", key: "nav_impact" },
+    { href: "#achievements", key: "nav_achievements" },
+    { href: "#partaner", key: "nav_partners" },
+    { href: "#contact", key: "nav_contact" },
   ];
 
-  // Dynamic class names
+  // Dynamic class names with RTL support
   const headerContainerClasses = `
     ${
       true
-        ? "fixed max-md:h-screen top-5 max-md:top-0 max-md:right-0 z-[200] md:mx-auto md:left-[50%] md:translate-x-[-50%]"
+        ? "fixed w-[760px] max-[800px]:h-screen top-5 max-[800px]:top-0 max-[800px]:right-0 z-[501] min-[800px]:mx-auto min-[800px]:left-[50%] min-[800px]:translate-x-[-50%]"
         : "hidden"
     } 
     ${
       show
-        ? "max-md:w-[250px] duration-200"
-        : "max-md:w-0 overflow-hidden duration-200"
+        ? "max-[800px]:w-[250px] duration-200"
+        : "max-[800px]:w-0 overflow-hidden duration-200"
     }
+    ${isRTL ? "max-[800px]:left-0 max-[800px]:right-auto" : ""}
   `;
 
   // Handle navigation click
@@ -37,60 +41,96 @@ function Header() {
   return (
     <>
       {/* Main Navigation */}
-      <div className={headerContainerClasses}>
+      <div className={headerContainerClasses + ""}>
         {/* Mobile Close Button */}
         <div
           onClick={() => setShow(!show)}
-          className="size-7 nav bgh md:hidden cursor-pointer flex items-center justify-center absolute top-3 z-[505] font-inter left-3 rounded-full"
+          className={`size-7 nav bgh min-[800px]:hidden text-white max-[800px]:rounded cursor-pointer flex items-center justify-center absolute top-3 z-[505] font-inter ${
+            isRTL ? "right-3 " : "left-3"
+          } rounded-full`}
         >
-          <p className="text-white">X</p>
+          x
         </div>
 
         {/* Navigation Menu */}
-        <nav className="nav font-light relative max-md:pt-12 max-md:pb-5 border border-[#2d2641] rounded md:rounded-full md:flex items-center p-1 md:h-[48px] max-md:h-full bg-[#0b011d] bg-opacity-60 backdrop-blur-md">
+        <nav
+          className={`
+          nav font-light   relative max-[800px]:pt-12 max-[800px]:pb-5 border max-[800px]:rounded border-[#2d2641] rounded-full px-2 min-[800px]:flex items-center p-1 min-[800px]:h-[50px] max-[800px]:h-full 
+          bg-[#0b011d] bg-opacity-60 backdrop-blur-md
+          ${isRTL ? "" : ""}
+        `}
+        >
+          <a href="/" className="block">
+            <img
+              src="/images/logo.png"
+              alt="Logo"
+              className={`w-[150px] cursor-pointer relative z-10  h-auto max-[800px]:w-full ${
+                isRTL ? "mx-2" : "mx-2"
+              }`}
+            />
+          </a>
           {navItems.map((item, index) => (
             <a
               key={index}
               href={item.href}
               onClick={handleNavClick}
-              className="nav-link max-md:h-[45px] relative z-[51] text-sm text-white font-inter cursor-pointer hover:opacity-80 transition-opacity duration-200"
+              className="nav-link max-[800px]:h-[45px] relative z-[51] text-sm text-white font-inter cursor-pointer hover:opacity-80 transition-opacity duration-200"
             >
-              <p className="nav-text">{item.label}</p>
+              <p className="nav-text">{t(item.key)}</p>
             </a>
           ))}
 
           {/* Separator Line for Desktop */}
-          <div className="nav-line max-md:hidden"></div>
-          <button
+
+          {/* Login Button */}
+          <a
+            href="https://inutrical.net/login"
             type="button"
-            className="nav-link max-md:h-[45px] relative z-[51] text-sm text-white font-inter cursor-pointer hover:opacity-80 transition-opacity duration-200 bg-transparent border-none outline-none"
+            className="nav-link max-[800px]:w-full max-[800px]:h-[45px] relative z-[51] text-sm text-white font-inter cursor-pointer hover:opacity-80 transition-opacity duration-200 bg-transparent border-none outline-none"
           >
-            <p className="nav-text">Login</p>
-          </button>
+            <p className="nav-text">{t("nav_login")}</p>
+          </a>
+          <div className="nav-line max-[800px]:hidden"></div>
+          {/* Language Switcher */}
+          <div className="nav-link mx-auto max-[800px]:h-[45px] !px-0 !pt-1.5 relative z-[51] text-sm text-white font-inter cursor-pointer hover:opacity-80 transition-opacity duration-200 bg-transparent border-none outline-none">
+            <LanguageSwitcher />
+          </div>
         </nav>
       </div>
 
       {/* Mobile Menu Toggle Button */}
-      <div onClick={() => setShow(!show)}>
-        <img
-          src="/menu.png"
-          alt="menu"
-          width={32}
-          height={32}
-          className="size-6 hover:rotate-180 duration-300 md:hidden"
-        />
-      </div>
-
-      {/* Popup Modal (You can implement this separately) */}
-      {showPopUp && (
-        <div className="fixed inset-0 z-[1000] bg-black bg-opacity-50 flex items-center justify-center">
-          <div className="bg-white p-6 rounded-lg">
-            <h3>Consultation Popup</h3>
-            <button onClick={() => setShowPopUp(false)}>Close</button>
-            {/* Add your consultation form here */}
+      <div
+        className={`fixed flex bg-[#0b011d] bg-opacity-40 backdrop-blur-md w-full px-3 py-1 justify-between items-center min-[800px]:hidden z-[500] top-0 `}
+      >
+        <div className="flex items-center gap-3">
+          <a href="/">
+            <img
+              src="/images/logo.png"
+              alt="Logo"
+              className={`w-[150px] cursor-pointer relative z-10  h-auto  ${
+                isRTL ? "mx-2" : "mx-2"
+              }`}
+            />
+          </a>
+          <a
+            href="https://inutrical.net/login"
+            type="button"
+            className="nav-link  max-[800px]:h-[45px] relative z-[51] text-sm text-white font-inter cursor-pointer hover:opacity-80 transition-opacity duration-200 bg-transparent border-none outline-none"
+          >
+            <p className="nav-text">{t("nav_login")}</p>
+          </a>
+        </div>
+        <div className="flex items-center gap-3">
+          <div className="nav-link max-[800px]:h-[45px] !px-0 !pt-1.5 relative z-[51] text-sm text-white font-inter cursor-pointer hover:opacity-80 transition-opacity duration-200 bg-transparent border-none outline-none">
+            <LanguageSwitcher />
+          </div>
+          <div onClick={() => setShow(!show)}>
+            <div className="size-10 p-2 cursor-pointer bg-gradient-to-r from-purple-600 to-blue-600 rounded-full flex items-center justify-center shadow-lg">
+              <img src="/menu.png" alt="Menu" className="size-5" />
+            </div>
           </div>
         </div>
-      )}
+      </div>
     </>
   );
 }

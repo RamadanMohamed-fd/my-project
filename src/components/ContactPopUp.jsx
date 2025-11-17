@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
+import { useLanguage } from "../context/LanguageContext";
 
 function ContactPopUp({ st, handle }) {
+  const { t, isRTL, currentLanguage } = useLanguage();
   const dropdownRef = useRef(null);
 
   const [step, setStep] = useState(st ? 1 : 0);
@@ -17,34 +19,97 @@ function ContactPopUp({ st, handle }) {
   });
   const [errors, setErrors] = useState({});
 
+  const content = {
+    en: {
+      ready: "Ready to Get Started?",
+      description:
+        "We're excited to help you bring your vision to life! Whether you have a question, need a quote, or want to discuss your project in detail, we're here to assist you. Fill out the form below, and our team will get back to you as soon as possible. Let's create something amazing together!",
+      responseTime: "We will get back to you as soon as possible.",
+      next: "Next",
+      back: "← Back",
+      submit: "Submit",
+      tryAgain: "Try again",
+      done: "Done",
+      successMessage: "Thank you for your message! We'll get back to you soon.",
+      errorMessage: "Something went wrong. Please try again.",
+      name: "Name",
+      email: "Email",
+      phone: "Phone",
+      institution: "Institution",
+      hearAboutUs: "How did you hear about us?",
+      select: "Select",
+      yourMessage: "Your Message",
+      nameRequired: "Name is required",
+      emailRequired: "Email is required",
+      invalidEmail: "Invalid email format",
+      phoneRequired: "Phone number is required",
+      invalidPhone: "Invalid phone number",
+      institutionRequired: "Institution is required",
+      hearAboutUsRequired: "Please select an option",
+      descriptionRequired: "Description is required",
+      dropdownOptions: ["Google", "Social Media", "Friend/Colleague", "Other"],
+    },
+    ar: {
+      ready: "مستعد للبدء؟",
+      description:
+        "نحن متحمسون لمساعدتك في تحقيق رؤيتك! سواء كان لديك سؤال، أو تحتاج إلى عرض سعر، أو تريد مناقشة مشروعك بالتفصيل، نحن هنا لمساعدتك. املأ النموذج أدناه، وسيعود فريقنا إليك في أقرب وقت ممكن. لنخلق شيئًا مذهلاً معًا!",
+      responseTime: "سوف نعود إليك في أقرب وقت ممكن.",
+      next: "التالي",
+      back: "← رجوع",
+      submit: "إرسال",
+      tryAgain: "حاول مرة أخرى",
+      done: "تم",
+      successMessage: "شكرًا لك على رسالتك! سوف نعود إليك قريبًا.",
+      errorMessage: "حدث خطأ ما. يرجى المحاولة مرة أخرى.",
+      name: "الاسم",
+      email: "البريد الإلكتروني",
+      phone: "الهاتف",
+      institution: "المؤسسة",
+      hearAboutUs: "كيف سمعت عنا؟",
+      select: "اختر",
+      yourMessage: "رسالتك",
+      nameRequired: "الاسم مطلوب",
+      emailRequired: "البريد الإلكتروني مطلوب",
+      invalidEmail: "صيغة البريد الإلكتروني غير صالحة",
+      phoneRequired: "رقم الهاتف مطلوب",
+      invalidPhone: "رقم الهاتف غير صالح",
+      institutionRequired: "المؤسسة مطلوبة",
+      hearAboutUsRequired: "يرجى اختيار خيار",
+      descriptionRequired: "الوصف مطلوب",
+      dropdownOptions: ["جوجل", "وسائل التواصل الاجتماعي", "صديق/زميل", "أخرى"],
+    },
+  };
+
+  const currentContent = content[currentLanguage];
+
   const validateForm = () => {
     const newErrors = {};
 
     if (step === 1) {
-      if (!formData.name.trim()) newErrors.name = "Name is required";
+      if (!formData.name.trim()) newErrors.name = currentContent.nameRequired;
 
       if (!formData.email.trim()) {
-        newErrors.email = "Email is required";
+        newErrors.email = currentContent.emailRequired;
       } else if (!/^\S+@\S+\.\S+$/.test(formData.email)) {
-        newErrors.email = "Invalid email format";
+        newErrors.email = currentContent.invalidEmail;
       }
 
       if (!formData.phone.trim()) {
-        newErrors.phone = "Phone number is required";
+        newErrors.phone = currentContent.phoneRequired;
       } else if (!/^\+?[0-9]{7,15}$/.test(formData.phone)) {
-        newErrors.phone = "Invalid phone number";
+        newErrors.phone = currentContent.invalidPhone;
       }
 
       if (!formData.institution.trim()) {
-        newErrors.institution = "Institution is required";
+        newErrors.institution = currentContent.institutionRequired;
       }
     }
 
     if (step === 2 && !formData.hearAboutUs.trim()) {
-      newErrors.hearAboutUs = "Please select an option";
+      newErrors.hearAboutUs = currentContent.hearAboutUsRequired;
     }
     if (step === 2 && !formData.description.trim()) {
-      newErrors.description = "Description is required";
+      newErrors.description = currentContent.descriptionRequired;
     }
 
     setErrors(newErrors);
@@ -146,7 +211,7 @@ function ContactPopUp({ st, handle }) {
       data-aos-duration="1000"
       data-aos-offset="100"
       data-aos-mirror="true"
-      className="m-auto z-[100] relative w-[700px] px-3 font-inter max-md:w-full"
+      className="mx-auto z-[100] relative max-w-[700px] px-3 font-inter max-md:w-full"
     >
       <div className="w-full flex items-center justify-center px-5 py-12 form-step relative">
         {st && (
@@ -158,40 +223,31 @@ function ContactPopUp({ st, handle }) {
           </div>
         )}
         <div>
-          <div className="max-w-[450px] max-[500px]:w-full mx-auto flex flex-col items-center max-xs:justify-end">
+          <div className="max-w-[450px] max-[500px]:w-full mx-auto flex flex-col items-center max-[440px]:justify-end">
             {step === 0 && (
               <>
                 <img
                   src="/images/logo.png"
                   alt="logo"
-                  className="w-[300px] h-auto mx-auto max-xs:w-[80%] max-xs:mb-5"
+                  className="w-[300px] h-auto mx-auto max-[440px]:w-[80%] max-[440px]:mb-5"
                 />
                 <div className="flex items-center relative justify-center mt-8">
-                  <img
-                    src="/images/send.png"
-                    alt="send"
-                    className="w-[60px] max-xs:absolute xs:-left-[70px] max-xs:-top-12 h-auto"
-                  />
-                  <h2 className="text-3xl max-xs:text-2xl hero-heading text-center font-semibold">
-                    Ready to Get Started?
+                  <h2 className="text-3xl max-[440px]:text-2xl hero-heading text-center font-semibold">
+                    {currentContent.ready}
                   </h2>
                 </div>
-                <p className="text-sm max-xs:text-xs text-center text-white opacity-65 mx-auto py-5 px-3 font-medium">
-                  We're excited to help you bring your vision to life! Whether
-                  you have a question, need a quote, or want to discuss your
-                  project in detail, we're here to assist you. Fill out the form
-                  below, and our team will get back to you as soon as possible.
-                  Let's create something amazing together!
+                <p className="text-sm max-[440px]:text-xs text-center text-white opacity-65 mx-auto py-5 px-3 font-medium">
+                  {currentContent.description}
                 </p>
 
                 <div className="border cursor-pointer mt-3 text-center border-[#2C233E] w-fit mx-auto bgh pl-3 pr-4 py-1 rounded-full flex items-center gap-x-1">
                   <img
                     src="/images/timer.svg"
                     alt="timer"
-                    className="max-xs:size-[20px] max-xs:hidden"
+                    className="max-[440px]:size-[20px] max-[440px]:hidden"
                   />
                   <p className="text-xs font-medium opacity-80 text-white">
-                    We will get back to you as soon as possible.
+                    {currentContent.responseTime}
                   </p>
                 </div>
                 <div className="mt-10 -mb-12 flex items-center">
@@ -200,24 +256,16 @@ function ContactPopUp({ st, handle }) {
                       onClick={handleStep}
                       className="nav-link w-full h-full relative z-[51] text-sm text-[#551A8B] font-inter"
                     >
-                      <p className="text-white text-sm">Next</p>
+                      <p className="text-white text-sm">
+                        {currentContent.next}
+                      </p>
                     </div>
                   </div>
                 </div>
               </>
             )}
             {step < 3 && (
-              <div className="mt-5 w-[450px] max-[550px]:w-[350px] max-xs:w-[300px] max-[350px]:w-full mx-auto">
-                {/* {step === 1 && (
-                  <h2 className="text-3xl hero-heading text-center max-xs:text-2xl  mx-auto font-semibold">
-                    How may I contact you?
-                  </h2>
-                )}
-                {step === 2 && (
-                  <h2 className="text-3xl hero-heading text-center max-xs:text-2xl max-w-[350px] mx-auto font-semibold">
-                    What are your project requirements?
-                  </h2>
-                )} */}
+              <div className="mt-5 w-[450px] max-[550px]:w-[350px] max-[440px]:w-[300px] max-[350px]:w-full mx-auto">
                 <form className="w-full mt-8" onSubmit={handleSubmit}>
                   {step !== 0 && (
                     <div className="w-full">
@@ -234,7 +282,7 @@ function ContactPopUp({ st, handle }) {
                           htmlFor="name"
                           className="hero-heading mb-1 text-sm block font-semibold"
                         >
-                          Name
+                          {currentContent.name}
                         </label>
                         <input
                           type="text"
@@ -257,7 +305,7 @@ function ContactPopUp({ st, handle }) {
                             htmlFor="email"
                             className="hero-heading mb-1 text-sm block font-semibold"
                           >
-                            Email
+                            {currentContent.email}
                           </label>
                           <input
                             type="email"
@@ -281,7 +329,7 @@ function ContactPopUp({ st, handle }) {
                             htmlFor="phone"
                             className="hero-heading mb-1 text-sm block font-semibold"
                           >
-                            Phone
+                            {currentContent.phone}
                           </label>
                           <input
                             type="tel"
@@ -305,7 +353,7 @@ function ContactPopUp({ st, handle }) {
                             htmlFor="institution"
                             className="hero-heading mb-1 text-sm block font-semibold"
                           >
-                            Institution
+                            {currentContent.institution}
                           </label>
                           <input
                             type="text"
@@ -334,19 +382,20 @@ function ContactPopUp({ st, handle }) {
                         ref={dropdownRef}
                       >
                         {/* Dropdown */}
-                        {/* Custom Dropdown - How did you hear about us? */}
                         <label
                           htmlFor="hearAboutUs"
                           className="hero-heading mb-1 text-sm block font-semibold"
                         >
-                          How did you hear about us?
+                          {currentContent.hearAboutUs}
                         </label>
                         <div className="relative">
                           <div
                             className="form-field h-[46px] w-full flex items-center justify-between cursor-pointer px-3"
                             onClick={() => setDropdownOpen((prev) => !prev)}
                           >
-                            <span>{formData.hearAboutUs || "Select"}</span>
+                            <span>
+                              {formData.hearAboutUs || currentContent.select}
+                            </span>
                             <svg
                               className={`w-4 h-4 transition-transform ${
                                 dropdownOpen ? "rotate-180" : ""
@@ -367,12 +416,7 @@ function ContactPopUp({ st, handle }) {
 
                           {dropdownOpen && (
                             <div className="absolute left-0 right-0 space-y-1 mt-1 form-field rounded-lg !px-0 border shadow-xl overflow-hidden z-20">
-                              {[
-                                "Google",
-                                "Social Media",
-                                "Friend/Colleague",
-                                "Other",
-                              ].map((option) => (
+                              {currentContent.dropdownOptions.map((option) => (
                                 <div
                                   key={option}
                                   onClick={() => {
@@ -411,7 +455,7 @@ function ContactPopUp({ st, handle }) {
                             htmlFor="description"
                             className="hero-heading mb-1 text-sm block font-semibold"
                           >
-                            Your Message
+                            {currentContent.yourMessage}
                           </label>
                           <textarea
                             id="description"
@@ -461,7 +505,9 @@ function ContactPopUp({ st, handle }) {
                                     />
                                   </svg>
                                 )}
-                                <p className="text-white text-sm">Submit</p>
+                                <p className="text-white text-sm">
+                                  {currentContent.submit}
+                                </p>
                               </div>
                             </button>
                           ) : (
@@ -470,7 +516,9 @@ function ContactPopUp({ st, handle }) {
                               onClick={handleStep}
                               className="nav-link w-full h-full relative z-[51] text-sm text-[#551A8B] font-inter"
                             >
-                              <p className="text-white text-sm">Next</p>
+                              <p className="text-white text-sm">
+                                {currentContent.next}
+                              </p>
                             </button>
                           )}
                         </div>
@@ -489,15 +537,15 @@ function ContactPopUp({ st, handle }) {
                       : "/images/close-button.png"
                   }
                   alt={sucess ? "success" : "error"}
-                  className="size-[128px] max-xs:size-24 mx-auto my-10"
+                  className="size-[128px] max-[440px]:size-24 mx-auto my-10"
                 />
                 <p className="text-center text-white text-lg mb-8">
                   {sucess
-                    ? "Thank you for your message! We'll get back to you soon."
-                    : "Something went wrong. Please try again."}
+                    ? currentContent.successMessage
+                    : currentContent.errorMessage}
                 </p>
                 {sucess ? (
-                  <div className="relative z-20 my-16 max-xs:my-10 flex items-center">
+                  <div className="relative z-20 my-16 max-[440px]:my-10 flex items-center">
                     <div
                       onClick={() => {
                         st ? handle() : setStep(0);
@@ -506,7 +554,9 @@ function ContactPopUp({ st, handle }) {
                       className="border border-[#2d2641] mx-auto rounded-full w-[130px] h-[40px] cursor-pointer nav bgh relative z-10 bg-[hsla(0,0%,100%,.03)] backdrop-blur-sm"
                     >
                       <button className="nav-link w-full h-full relative z-[51] text-sm text-[#551A8B] font-inter">
-                        <p className="text-white text-sm">Done</p>
+                        <p className="text-white text-sm">
+                          {currentContent.done}
+                        </p>
                       </button>
                     </div>
                   </div>
@@ -520,7 +570,9 @@ function ContactPopUp({ st, handle }) {
                       className="border border-[#2d2641] mx-auto rounded-full w-[130px] h-[40px] cursor-pointer nav bgh relative z-10 bg-[hsla(0,0%,100%,.03)] backdrop-blur-sm"
                     >
                       <button className="nav-link w-full h-full relative z-[51] text-sm text-[#551A8B] font-inter">
-                        <p className="text-white text-sm">Try again</p>
+                        <p className="text-white text-sm">
+                          {currentContent.tryAgain}
+                        </p>
                       </button>
                     </div>
                   </div>
@@ -538,7 +590,7 @@ function ContactPopUp({ st, handle }) {
               sucess ? "hidden" : ""
             }`}
           >
-            ← Back
+            {currentContent.back}
           </div>
         )}
       </div>

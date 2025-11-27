@@ -12,6 +12,7 @@ function Header() {
   const navItems = [
     { href: "#about", key: "nav_about" },
     { href: "#features", key: "nav_features" },
+    { href: "#why", key: "why iNutrical" },
     { href: "#impact", key: "nav_impact" },
     { href: "#achievements", key: "nav_achievements" },
     { href: "#partaner", key: "nav_partners" },
@@ -22,15 +23,15 @@ function Header() {
   const headerContainerClasses = `
     ${
       true
-        ? "fixed w-[760px] max-[800px]:h-screen top-1 max-[800px]:top-0 max-[800px]:right-0 z-[501] min-[800px]:mx-auto min-[800px]:left-[50%] min-[800px]:translate-x-[-50%]"
+        ? "fixed w-[900px] max-[950px]:h-screen top-1 max-[950px]:top-0 max-[950px]:right-0 z-[501] min-[950px]:mx-auto min-[950px]:left-[50%] min-[950px]:translate-x-[-50%]"
         : "hidden"
     } 
     ${
       show
-        ? "max-[800px]:w-[250px] duration-200"
-        : "max-[800px]:w-0 overflow-hidden duration-200"
+        ? "max-[950px]:w-[250px] duration-200"
+        : "max-[950px]:w-0 overflow-hidden duration-200"
     }
-    ${isRTL ? "max-[800px]:left-0 max-[800px]:right-auto" : ""}
+    ${isRTL ? "max-[950px]:left-0 max-[950px]:right-auto" : ""}
   `;
 
   // Handle navigation click
@@ -45,7 +46,7 @@ function Header() {
         {/* Mobile Close Button */}
         <div
           onClick={() => setShow(!show)}
-          className={`size-7 nav bgh min-[800px]:hidden text-white max-[800px]:rounded cursor-pointer flex items-center justify-center absolute top-3 z-[505] font-inter ${
+          className={`size-7 nav bgh min-[950px]:hidden text-white max-[950px]:rounded cursor-pointer flex items-center justify-center absolute top-3 z-[505] font-inter ${
             isRTL ? "right-3 " : "left-3"
           } rounded-full`}
         >
@@ -55,7 +56,7 @@ function Header() {
         {/* Navigation Menu */}
         <nav
           className={`
-          nav font-light   relative max-[800px]:pt-12 max-[800px]:pb-5 border max-[800px]:rounded border-[#2d2641] rounded-full px-2 min-[800px]:flex items-center p-1 min-[800px]:h-[50px] max-[800px]:h-full 
+          nav font-light   relative max-[950px]:pt-12 max-[950px]:pb-5 border max-[950px]:rounded border-[#2d2641] rounded-full px-2 min-[950px]:flex items-center p-1 min-[950px]:h-[50px] max-[950px]:h-full 
           bg-[#0b011d] bg-opacity-60 backdrop-blur-md
           ${isRTL ? "" : ""}
         `}
@@ -64,7 +65,7 @@ function Header() {
             <img
               src="/images/logo.png"
               alt="Logo"
-              className={`w-[150px] cursor-pointer relative z-10  h-auto max-[800px]:w-full ${
+              className={`w-[150px] cursor-pointer relative z-10  h-auto max-[950px]:w-full ${
                 isRTL ? "mx-2" : "mx-2"
               }`}
             />
@@ -74,7 +75,7 @@ function Header() {
               key={index}
               href={item.href}
               onClick={handleNavClick}
-              className="nav-link max-[800px]:h-[45px] relative z-[51] text-sm text-white font-inter cursor-pointer hover:opacity-80 transition-opacity duration-200"
+              className="nav-link max-[950px]:h-[45px] relative z-[51] text-sm text-white font-inter cursor-pointer hover:opacity-80 transition-opacity duration-200"
             >
               <p className="nav-text">{t(item.key)}</p>
             </a>
@@ -86,13 +87,13 @@ function Header() {
           <a
             href="https://inutrical.net/login"
             type="button"
-            className="nav-link max-[800px]:w-full max-[800px]:h-[45px] relative z-[51] text-sm text-white font-inter cursor-pointer hover:opacity-80 transition-opacity duration-200 bg-transparent border-none outline-none"
+            className="nav-link max-[950px]:w-full max-[950px]:h-[45px] relative z-[51] text-sm text-white font-inter cursor-pointer hover:opacity-80 transition-opacity duration-200 bg-transparent border-none outline-none"
           >
             <p className="nav-text">{t("nav_login")}</p>
           </a>
-          <div className="nav-line max-[800px]:hidden"></div>
+          <div className="nav-line max-[950px]:hidden"></div>
           {/* Language Switcher */}
-          <div className="nav-link mx-auto max-[800px]:h-[45px] !px-0 !pt-1.5 relative z-[51] text-sm text-white font-inter cursor-pointer hover:opacity-80 transition-opacity duration-200 bg-transparent border-none outline-none">
+          <div className="nav-link mx-auto max-[950px]:h-[45px] !px-0 !pt-1.5 relative z-[51] text-sm text-white font-inter cursor-pointer hover:opacity-80 transition-opacity duration-200 bg-transparent border-none outline-none">
             <LanguageSwitcher />
           </div>
         </nav>
@@ -100,7 +101,7 @@ function Header() {
 
       {/* Mobile Menu Toggle Button */}
       <div
-        className={`fixed flex bg-[#0b011d] bg-opacity-40 backdrop-blur-md w-full px-3 py-1 justify-between items-center min-[800px]:hidden z-[500] top-0 `}
+        className={`fixed flex bg-[#0b011d] bg-opacity-40 backdrop-blur-md w-full px-3 py-1 justify-between items-center min-[950px]:hidden z-[500] top-0 `}
       >
         <div className="flex items-center gap-3">
           <a href="/">
@@ -115,13 +116,13 @@ function Header() {
           <a
             href="https://inutrical.net/login"
             type="button"
-            className="nav-link  max-[800px]:h-[45px] relative z-[51] text-sm text-white font-inter cursor-pointer hover:opacity-80 transition-opacity duration-200 bg-transparent border-none outline-none"
+            className="nav-link  max-[950px]:h-[45px] relative z-[51] text-sm text-white font-inter cursor-pointer hover:opacity-80 transition-opacity duration-200 bg-transparent border-none outline-none"
           >
             <p className="nav-text">{t("nav_login")}</p>
           </a>
         </div>
         <div className="flex items-center gap-3">
-          <div className="nav-link max-[800px]:h-[45px] !px-0 !pt-1.5 relative z-[51] text-sm text-white font-inter cursor-pointer hover:opacity-80 transition-opacity duration-200 bg-transparent border-none outline-none">
+          <div className="nav-link max-[950px]:h-[45px] !px-0 !pt-1.5 relative z-[51] text-sm text-white font-inter cursor-pointer hover:opacity-80 transition-opacity duration-200 bg-transparent border-none outline-none">
             <LanguageSwitcher />
           </div>
           <div onClick={() => setShow(!show)}>

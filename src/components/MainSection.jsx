@@ -28,7 +28,7 @@ function MainSection() {
     },
     {
       id: 3,
-      image: "header/3.jpeg",
+      image: "header/3.JPEG",
 
       title: { en: "Our Story", ar: "قصتنا" },
       description: {

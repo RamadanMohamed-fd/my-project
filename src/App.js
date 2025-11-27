@@ -1,3 +1,4 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import MainSection from "./components/MainSection";
 import Prict from "./components/Prict";
 import Techsection from "./components/Techsection";
@@ -10,40 +11,57 @@ import Divided from "./components/Divided";
 import AnimatedBeamDemo from "./components/Partaner";
 import Counter from "./components/Counter";
 import Header from "./components/Header";
+import TermsAndConditions from "./components/TermsAndConditions"; // New component
+import Police from "./components/police"; // New component
+import ComingSoon from "./components/ComingSoon"; // New component
+
 function App() {
   useEffect(() => {
     AOS.init({
-      // Global settings:
-      duration: 800,
+      duration: 600,
       easing: "ease-in-out",
-      once: true, // Animation only happens once
+      once: true,
       mirror: true,
       anchorPlacement: "top-bottom",
-      // You can add more settings as needed
     });
-
-    // Refresh AOS when components are updated
     AOS.refresh();
 
     return () => {
-      AOS.refreshHard(); // Cleanup if needed
+      AOS.refreshHard();
     };
   }, []);
-  return (
-    <div className="App">
-      <MainSection />
-      <About />
-      <Divided />
-      <Counter />
-      <Techsection />
 
-      <AnimatedBeamDemo />
-      <Contact />
-      <div className=" fixed top-0 left-0 w-full  h-screen z-10">
-        <Prict />
+  return (
+    <Router>
+      <div className="App">
+        <Routes>
+          {/* Main landing page route */}
+          <Route
+            path="/"
+            element={
+              <>
+                <MainSection />
+                <About />
+                <Divided />
+                <Counter />
+                <Techsection />
+                <AnimatedBeamDemo />
+                <Contact />
+                <div className="fixed top-0 left-0 w-full h-screen z-10">
+                  <Prict />
+                </div>
+                <Header />
+              </>
+            }
+          />
+
+          {/* Terms & Conditions page route */}
+          <Route path="/terms" element={<TermsAndConditions />} />
+          <Route path="/police" element={<Police />} />
+          <Route path="/coming-soon" element={<ComingSoon />} />
+        </Routes>
       </div>
-      <Header />
-    </div>
+    </Router>
   );
 }
 

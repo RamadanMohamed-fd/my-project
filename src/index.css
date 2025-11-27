@@ -1394,3 +1394,10 @@ svg text {
 .linn{
   z-index: 400 !important;
 }
+
+.grid-card {
+    background: radial-gradient(50% 70.31% at 50% 0, rgba(126, 61, 255, .04) 0, rgba(126, 61, 255, 0) 100%), rgba(11, 1, 29, .01);
+    -webkit-backdrop-filter: blur(8.5px);
+    backdrop-filter: blur(8.5px);
+    border-radius: 12px;
+}

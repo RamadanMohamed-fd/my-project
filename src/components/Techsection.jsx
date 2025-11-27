@@ -52,136 +52,35 @@ function Techsection() {
 
       <div className="relative mt-10 max-sm:mt-8 max-w-[1300px] h-full mx-auto">
         <div className="w-full h-full relative z-50">
-          {/* Header Section */}
-          <div
-            data-aos="fade-up"
-            data-aos-anchor-placement="bottom-bottom"
-            data-aos-easing="ease-out-back"
-            data-aos-duration="1000"
-            data-aos-offset="100"
-            data-aos-mirror="true"
-            className="w-fit mx-auto text-center"
-          >
-            <a href="/" className="block mb-1">
-              <img
-                src="/images/logo.png"
-                alt="Logo"
-                className={`w-[300px] cursor-pointer relative z-10 mx-auto h-auto`}
-              />
-            </a>
-            <p className="hero-heading text-5xl font-medium mb-6 font-inter">
-              {currentContent.advertise}
-            </p>
-            <div className="border border-[#2d2641] group rounded-full w-[140px] mx-auto h-[40px] cursor-pointer nav bgh relative bg-[hsla(0,0%,100%,.03)] backdrop-blur-sm">
-              <a
-                href="#contact"
-                className="nav-link w-full flex items-center linn !z-[499] gap-3 h-full relative text-sm text-white font-inter justify-center"
-              >
-                <img
-                  src="/images/star.png"
-                  alt="quill"
-                  width={24}
-                  height={24}
-                  className="group-hover:rotate-180 duration-700"
-                />
-                <p className="text-white text-sm">{currentContent.freeTrial}</p>
-              </a>
-            </div>
-          </div>
-
           {/* Empty div for animations - kept as is */}
+          <a data-aos="fade" href="/" className="block ">
+            <img
+              src="/images/logo.png"
+              alt="Logo"
+              className={`w-[400px] cursor-pointer relative z-10 mx-auto `}
+            />
+          </a>
           <div
             data-aos="fade-up"
-            data-aos-anchor-placement="bottom-bottom"
             data-aos-easing="ease-out-back"
             data-aos-duration="1000"
             data-aos-offset="100"
             data-aos-mirror="true"
-            className="max-xs:-mt-1 flex items-center justify-center pb-2 max-w-[700px] mt-5 leading-[1.3em] mx-auto text-center text-3xl px-3 font-inter font-medium max-sm:text-xl capitalize hero-heading"
+            className="max-xs:-mt-1 flex items-center justify-center pb-2 max-w-[700px] leading-[1.3em] mx-auto text-center text-3xl px-3 font-inter font-medium max-sm:text-xl capitalize hero-heading"
           ></div>
 
           {/* Background decorations */}
           <div className="min-h-[100px]">
             <div className="square absolute top-0 left-[8%] max-[400px]:hidden"></div>
             <div className="square absolute top-[17%] left-[15%] max-sm:hidden rotate-90"></div>
-            <div className="square absolute top-[60%] max-sm:top-[60%] left-[20%] max-sm:left-[10%]"></div>
             <div className="square absolute top-0 right-[8%] max-[400px]:hidden -rotate-90"></div>
             <div className="square absolute top-[17%] right-[15%] max-sm:hidden rotate-180"></div>
-            <div className="square absolute top-[60%] max-sm:top-[60%] right-[20%] max-sm:right-[10%] -rotate-90"></div>
           </div>
         </div>
       </div>
 
-      <div className="-mt-20 max-sm:-mt-28 relative z-20">
+      <div>
         <div className="relative flex flex-col mt-8 mx-auto justify-center items-center">
-          {/* Success Story Card */}
-          <div className="relative px-20 max-sm:px-5 py-10 z-10 w-[670px] backdrop-blur-sm h-[550px] max-sm:h-[400px] border border-[#ffffff00] intro-card max-sm:w-[98%]">
-            <img
-              src="/images/tags-quick-action-grid.png"
-              alt="grid"
-              width={500}
-              height={400}
-              className="absolute -left-0 bottom-0 w-full mx-auto h-full"
-            />
-            <div className="w-full h-full relative flex justify-center pt-3 gap-y-8 flex-col">
-              <img
-                src="/images/quill1.webp"
-                alt="quill"
-                width={70}
-                height={70}
-                className="w-[60px] max-sm:w-[50px] h-auto absolute top-0 max-xs:top-2 max-xs:left-2 left-0"
-              />
-              <img
-                src="/images/quill1.webp"
-                alt="quill"
-                width={70}
-                height={70}
-                className="w-[60px] max-sm:w-[50px] h-auto rotate-180 absolute -bottom-0 right-0 max-xs:right-2"
-              />
-              <p
-                className={`hero-heading text-3xl max-sm:text-xl max-xs:text-base leading-[1.4em] capitalize font-inter text-center ${
-                  currentLanguage === "ar"
-                    ? "direction-rtl leading-[2em]"
-                    : "direction-ltr"
-                }`}
-              >
-                <span className="font-lobster text-5xl max-sm:text-3xl max-xs:text-xl">
-                  {currentContent.successTitle}
-                </span>{" "}
-                {currentContent.successQuote}
-              </p>
-              <div className="flex items-center justify-between gap-3 max-xs:gap-y-6 max-[480px]:flex-col">
-                <div className="flex items-center max-[480px]:justify-start max-[480px]:w-full gap-x-4 cursor-pointer">
-                  <img
-                    src="/images/prince.jpg"
-                    width={100}
-                    height={100}
-                    alt="user"
-                    className="object-cover object-top size-[70px] max-sm:size-10 max-sm:min-w-10 rounded-full"
-                  />
-                  <div className="max-w-[250px]">
-                    <h2
-                      className={`text-xl max-sm:text-sm hero-heading font-semibold text-center ${
-                        currentLanguage === "ar" ? "text-right" : "text-left"
-                      }`}
-                    >
-                      {currentContent.princeName}
-                    </h2>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div>
-              <img
-                src="/images/shadow.webp"
-                alt="shadow"
-                width={1444}
-                height={666}
-                className="absolute bottom-0 left-0 w-full h-auto opacity-50"
-              />
-            </div>
-          </div>
-
           {/* Mission Card */}
           <div className="sticky-1 relative pt-32 max-sm:pt-20 z-10 w-[670px] backdrop-blur-sm h-[550px] max-sm:h-[400px] border border-[#ffffff00] intro-card max-sm:w-[95%]">
             <img
@@ -208,21 +107,6 @@ function Techsection() {
               {currentContent.missionText}
             </h2>
 
-            <div className="border mt-10 z-50 border-[#2d2641] group rounded-full w-[140px] mx-auto h-[40px] cursor-pointer nav bgh relative bg-[hsla(0,0%,100%,.03)] backdrop-blur-sm">
-              <a
-                href="#contact"
-                className="nav-link w-full flex items-center linn !z-[499] gap-3 h-full relative text-sm text-white font-inter justify-center"
-              >
-                <img
-                  src="/images/star.png"
-                  alt="quill"
-                  width={24}
-                  height={24}
-                  className="group-hover:rotate-180 duration-700"
-                />
-                <p className="text-white text-sm">{currentContent.freeTrial}</p>
-              </a>
-            </div>
             <div>
               <img
                 src="/images/shadow.webp"
@@ -252,113 +136,14 @@ function Techsection() {
               {currentContent.visionTitle}
             </p>
             <h2
-              className={`hero-heading px-6 max-sm:px-5 tracking-wide text-center font-normal mt-10 max-sm:mt-6 max-w-[550px] mx-auto text-3xl leading-[1.4em] max-sm:text-xl font-inter capitalize ${
+              className={`hero-heading !text-center px-5 max-sm:px-5 tracking-wide  font-normal mt-10 max-sm:mt-6 max-w-[550px] mx-auto text-3xl leading-[1.4em] max-sm:text-xl font-inter capitalize ${
                 currentLanguage === "ar"
                   ? "direction-rtl leading-[2em]"
                   : "direction-ltr"
               }`}
             >
-              {currentContent.visionText}{" "}
-              <p className="flex items-center hero-heading gap-1 text-center mx-auto w-fit">
-                <span className="w-8 h-[1px] bg-white block"></span>
-                {currentContent.locallyGlobal}
-              </p>
+              {currentContent.visionText} {currentContent.locallyGlobal}
             </h2>
-            <div className="border mt-5 z-50 border-[#2d2641] group rounded-full w-[140px] mx-auto h-[40px] cursor-pointer nav bgh relative bg-[hsla(0,0%,100%,.03)] backdrop-blur-sm">
-              <a
-                href="#contact"
-                className="nav-link w-full flex items-center linn !z-[499] gap-3 h-full relative text-sm text-white font-inter justify-center"
-              >
-                <img
-                  src="/images/star.png"
-                  alt="quill"
-                  width={24}
-                  height={24}
-                  className="group-hover:rotate-180 duration-700"
-                />
-                <p className="text-white text-sm">{currentContent.freeTrial}</p>
-              </a>
-            </div>
-            <div>
-              <img
-                src="/images/shadow.webp"
-                alt="shadow"
-                width={1444}
-                height={666}
-                className="absolute bottom-0 left-0 w-full h-auto opacity-50"
-              />
-            </div>
-          </div>
-
-          {/* Free Trial Card */}
-          <div className="sticky-3 relative pt-20 max-sm:pt-14 max-[330px]:pt-14 z-10 w-[670px] backdrop-blur-sm h-[550px] max-sm:h-[400px] max-[380px]:h-[430px] border border-[#ffffff00] intro-card max-sm:px-0 max-sm:pb-10 max-sm:w-[95%]">
-            <img
-              src="/images/tags-quick-action-grid.png"
-              alt="grid"
-              width={500}
-              height={400}
-              className="absolute -left-0 bottom-0 w-full mx-auto h-full"
-            />
-            <img
-              src="/images/m1.png"
-              alt="grid"
-              className="absolute left-10 top-10"
-            />
-            <img
-              src="/images/m2.webp"
-              alt="grid"
-              className="absolute left-[30%] top-16"
-            />
-            <img
-              src="/images/m3.webp"
-              alt="grid"
-              className="absolute left-[50%] top-10"
-            />
-            <img
-              src="/images/m4.webp"
-              alt="grid"
-              className="absolute left-[80%] top-16"
-            />
-            <img
-              src="/images/music.webp"
-              alt="circles"
-              className="w-[744px] h-auto max-[800px]:w-full max-[800px]:h-auto left-0 top-0 absolute z-[2]"
-            />
-
-            <p className="text-6xl max-sm:text-4xl font-lobster text-center hero-heading">
-              {currentContent.freeTrialTitle}
-            </p>
-            <div className="px-5 max-sm:px-0 space-y-5 max-sm:space-y-5 mt-7 max-sm:mt-0">
-              <h2
-                className={`hero-heading px-6 max-sm:px-5 tracking-wide text-center font-normal mt-7 max-sm:mt-6 mx-auto text-3xl
-                   leading-[1.4em] max-sm:text-xl font-inter `}
-              >
-                {currentContent.freeTrialText1}
-                <p
-                  className={`flex items-center mt-4 text-3xl max-sm:text-xl leading-[50px] hero-heading gap-1 text-center mx-auto w-fit `}
-                >
-                  {currentContent.freeTrialText2}
-                </p>
-              </h2>
-
-              <div className="border z-50 border-[#2d2641] group rounded-full w-[140px] mx-auto h-[40px] cursor-pointer nav bgh relative bg-[hsla(0,0%,100%,.03)] backdrop-blur-sm">
-                <a
-                  href="#contact"
-                  className="nav-link w-full flex items-center linn !z-[499] gap-3 h-full relative text-sm text-white font-inter justify-center"
-                >
-                  <img
-                    src="/images/star.png"
-                    alt="quill"
-                    width={24}
-                    height={24}
-                    className="group-hover:rotate-180 duration-700"
-                  />
-                  <p className="text-white text-sm">
-                    {currentContent.freeTrial}
-                  </p>
-                </a>
-              </div>
-            </div>
 
             <div>
               <img

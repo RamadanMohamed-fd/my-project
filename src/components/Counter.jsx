@@ -50,9 +50,6 @@ function Counter() {
       <div className="max-w-[920px] relative mx-auto mt-10 max-sm:mt-0 px-10 max-sm:px-2 max-sm:py-16">
         <div
           data-aos="fade-up"
-          data-aos-anchor-placement="bottom-bottom"
-          data-aos-easing="ease-out-back"
-          data-aos-duration="1000"
           data-aos-offset="100"
           data-aos-mirror="true"
           className="border border-[#ffffff1a] text-white nav relative text-sm max-sm:text-sm bg-[#ffffff0a] rounded-full py-1 px-3 w-fit mx-auto"
@@ -62,9 +59,6 @@ function Counter() {
 
         <div
           data-aos="fade-up"
-          data-aos-anchor-placement="bottom-bottom"
-          data-aos-easing="ease-out-back"
-          data-aos-duration="1000"
           data-aos-offset="100"
           data-aos-mirror="true"
           className="max-sm:mt-5 flex-col flex items-center justify-center pb-2 max-w-[650px] mt-5 leading-[1.2em] mx-auto text-center text-3xl px-3 
@@ -82,7 +76,6 @@ function Counter() {
           <div className="relative">
             <div
               data-aos="fade-up"
-              data-aos-anchor-placement="bottom-bottom"
               data-aos-easing="ease-out-back"
               data-aos-duration="1000"
               data-aos-offset="100"
@@ -119,11 +112,7 @@ function Counter() {
               className="max-md:h-[200px]"
             />
           </div>
-          <div
-            data-aos="fade-up"
-            data-aos-anchor-placement="bottom-bottom"
-            className="relative"
-          >
+          <div data-aos="fade-up" className="relative">
             <div
               className={`absolute bottom-8 max-sm:bottom-4 ${
                 isRTL ? "right-8 max-sm:right-4" : "left-8 max-sm:left-4"
@@ -159,7 +148,6 @@ function Counter() {
           </div>
           <div
             data-aos="fade-up"
-            data-aos-anchor-placement="bottom-bottom"
             data-aos-easing="ease-out-back"
             data-aos-duration="1000"
             data-aos-offset="100"
@@ -201,7 +189,6 @@ function Counter() {
           </div>
           <div
             data-aos="fade-up"
-            data-aos-anchor-placement="bottom-bottom"
             data-aos-easing="ease-out-back"
             data-aos-duration="1000"
             data-aos-offset="100"

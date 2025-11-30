@@ -9,7 +9,7 @@ function About() {
       <div className="line-break"></div>
       <div
         data-aos="fade-up"
-        className={`max-w-4xl relative z-50 mx-auto pt-20 max-sm:pt-10 ${
+        className={`max-w-[650px] relative z-50 mx-auto pt-20 max-sm:pt-10 ${
           isRTL ? "text-right" : "text-left"
         }`}
       >
@@ -25,24 +25,13 @@ function About() {
                 : "text-left direction-ltr"
             }`}
           >
-            {currentLanguage === "en" ? "About Us" : "من نحن"}
+            {currentLanguage === "en" ? "About" : "من نحن"}
           </p>
           <div
             className={`space-y-5 z-30 hero-heading ${
               isRTL ? "text-right" : "text-left"
             }`}
           >
-            <div
-              className={`text-xl font-medium max-sm:text-xl max-[440px]:text-base leading-[1.6em] tracking-wider font-inter ${
-                currentLanguage === "ar"
-                  ? "text-right direction-rtl leading-[2.2em] "
-                  : "text-left direction-ltr leading-[1.6em]"
-              }`}
-            >
-              {currentLanguage === "en"
-                ? "Clinical dietitians worldwide face a considerable burden when dealing with critically ill patients in the intensive care unit (ICU) settings."
-                : "يواجه أخصائيو التغذية السريرية حول العالم عبئًا كبيرًا عند التعامل مع المرضى المصابين بأمراض خطيرة في بيئات وحدة العناية المركزة (ICU)."}
-            </div>
             <p
               className={`text-xl font-medium max-sm:text-xl max-[440px]:text-base leading-[1.6em] tracking-wider font-inter ${
                 currentLanguage === "ar"
@@ -51,19 +40,8 @@ function About() {
               }`}
             >
               {currentLanguage === "en"
-                ? "These inevitable daily challenges include calculating the energy and nutrients needs, the time consumed performing those calculations, the time needed for nutritional reassessment and monitoring, and the fact that those patients are at higher risk for complications. for ICU patients."
-                : "تشمل هذه التحديات اليومية الحتمية حساب احتياجات الطاقة والعناصر الغذائية، والوقت المستغرق في إجراء تلك الحسابات، والوقت اللازم لإعادة التقييم الغذائي والمراقبة، وحقيقة أن هؤلاء المرضى معرضون لخطر أكبر للإصابة بالمضاعفات."}
-            </p>
-            <p
-              className={`text-xl font-medium max-sm:text-xl max-[440px]:text-base leading-[1.6em] tracking-wider font-inter ${
-                currentLanguage === "ar"
-                  ? "text-right direction-rtl leading-[2.2em] "
-                  : "text-left direction-ltr leading-[1.6em]"
-              }`}
-            >
-              {currentLanguage === "en"
-                ? "iNutriCal® is the first clinical nutrition management system specialized in calculating the nutritional needs of enterally-administered formulae"
-                : "iNutriCal® هو أول نظام إدارة التغذية السريرية المتخصص في حساب الاحتياجات الغذائية للتركيبات المُعطاة عن طريق الأنبوب."}
+                ? "iNutriCal® is the first clinical nutrition management system specialized in calculating the nutritional needs of enterally-administered formulae for adult critical care patients."
+                : "iNutriCal® هو أول نظام إدارة التغذية السريرية المتخصص في حساب الاحتياجات الغذائية للتركيبات المُعطاة عن طريق الأنبوب لمرضى الرعاية الحرجة البالغين."}
             </p>
             <p
               className={`text-xl font-medium max-sm:text-xl max-[440px]:text-base leading-[1.6em] tracking-wider font-inter ${
@@ -74,7 +52,7 @@ function About() {
             >
               {currentLanguage === "en"
                 ? "iNutriCal® is designed for clinical dietitians, diet technicians, and other nutrition care professionals to boost productivity and excellence in nutritional care for ICU patients."
-                : "تم تصميمiNutriCal لأخصائيي التغذية السريرية وفنيي التغذية ومتخصصي الرعاية الغذائية الآخرين لتعزيز الإنتاجية والتميز في الرعاية الغذائية لمرضى العناية المركزة."}
+                : "تم تصميم iNutriCal® لأخصائيي التغذية السريرية وفنيي التغذية ومتخصصي الرعاية الغذائية الآخرين لتعزيز الإنتاجية والتميز في الرعاية الغذائية لمرضى العناية المركزة."}
             </p>
             <p
               className={`text-xl font-medium max-sm:text-xl max-[440px]:text-base leading-[1.6em] tracking-wider font-inter ${
@@ -95,8 +73,8 @@ function About() {
               }`}
             >
               {currentLanguage === "en"
-                ? "In 2019, out of 464 participated projects nationwide, our software was recognized by the Saudi Food & Drug Administration, Riyadh, Saudi Arabia, for innovation and necessity."
-                : "في عام 2019، من أصل 464 مشروعًا مشاركًا على مستوى الوطن، تم الاعتراف ببرنامجنا من قبل الهيئة العامة للغذاء والدواء، الرياض، المملكة العربية السعودية، للابتكار والضرورة."}
+                ? "The innovative iNutriCal inventory system provides real-time reporting of formulae consumption, prevents shortages and lower inventory levels, views and tracks formulae inventory purchases and transactions, and more."
+                : "يوفر نظام المخزون المبتكر iNutriCal إعداد تقارير في الوقت الفعلي عن استهلاك التركيبات، ويمنع النقص ويخفض مستويات المخزون، ويعرض ويتتبع مشتريات ومعاملات مخزون التركيبات، والمزيد."}
             </p>
           </div>
 

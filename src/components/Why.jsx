@@ -39,7 +39,7 @@ function WhySection() {
                 ? "Protocol Adherence"
                 : "الالتزام بالبروتوكول"}
             </h3>
-            <p className="leading-[1.5] font-inter text-white/50 transition-colors duration-300">
+            <p className="   leading-[1.5]  mt-2 font-inter text-white/80 transition-colors duration-300">
               {currentLanguage === "en"
                 ? "Track adherence of the clinical dietitians to the hospital's enteral feeding protocol"
                 : "تتبع التزام أخصائيي التغذية السريرية ببروتوكول التغذية المعوية بالمستشفى"}
@@ -59,7 +59,7 @@ function WhySection() {
                 ? "Performance Monitoring"
                 : "مراقبة الأداء"}
             </h3>
-            <p className="leading-[1.5] font-inter text-white/50 transition-colors duration-300">
+            <p className="   leading-[1.5]  mt-2 font-inter text-white/80 transition-colors duration-300">
               {currentLanguage === "en"
                 ? "Enables the head of the clinical nutrition department to monitor the clinical dietitians' performance, and easily access the patient nutrition history when needed"
                 : "يمكن رئيس قسم التغذية السريرية من مراقبة أداء أخصائيي التغذية السريرية، والوصول بسهولة إلى تاريخ التغذية للمريض عند الحاجة"}
@@ -70,7 +70,7 @@ function WhySection() {
             alt="data"
             width={256}
             height={256}
-            className="w-[170px] mt-2 h-auto group-hover:opacity-90 opacity-50 group-hover:scale-100 scale-95 ease-in duration-200 mx-auto"
+            className="w-[170px] mt-6 h-auto group-hover:opacity-90 opacity-50 group-hover:scale-100 scale-95 ease-in duration-200 mx-auto"
           />
         </div>
 
@@ -86,7 +86,7 @@ function WhySection() {
                 ? "Inventory Management"
                 : "إدارة المخزون"}
             </h3>
-            <p className="leading-[1.5] font-inter text-white/50 transition-colors duration-300">
+            <p className="   leading-[1.5]  mt-2 font-inter text-white/80 transition-colors duration-300">
               {currentLanguage === "en"
                 ? "Provides sophisticated, yet user-friendly enteral formula inventory system for a Real-time tracking of inventory levels to prevent shortages"
                 : "يوفر نظام مخزون متطور وسهل الاستخدام للتركيبات المعوية لتتبع مستويات المخزون في الوقت الفعلي لمنع النقص"}
@@ -118,7 +118,7 @@ function WhySection() {
             <h3 className="text-2xl text-left leading-[1.3] font-inter text-[#E3E3E3]">
               {currentLanguage === "en" ? "Time Reduction" : "توفير الوقت"}
             </h3>
-            <p className="leading-[1.5] font-inter text-white/50 transition-colors duration-300">
+            <p className="   leading-[1.5]  mt-2 font-inter text-white/80 transition-colors duration-300">
               {currentLanguage === "en"
                 ? "Reduce documentation time, and improve patient care"
                 : "تقليل وقت التوثيق، وتحسين رعاية المريض"}
@@ -145,7 +145,7 @@ function WhySection() {
                 ? "Team Collaboration"
                 : "التعاون بين الفريق"}
             </h3>
-            <p className="leading-[1.5] font-inter text-white/50 transition-colors duration-300">
+            <p className="   leading-[1.5]  mt-2 font-inter text-white/80 transition-colors duration-300">
               {currentLanguage === "en"
                 ? "Enhanced team collaboration by easily and securely sharing the patient nutrition-related information"
                 : "تعزيز التعاون بين الفريق من خلال مشاركة معلومات التغذية الخاصة بالمريض بسهولة وأمان"}
@@ -163,7 +163,7 @@ function WhySection() {
             <h3 className="text-2xl text-left leading-[1.3] font-inter text-[#E3E3E3]">
               {currentLanguage === "en" ? "Cost Reduction" : "خفض التكاليف"}
             </h3>
-            <p className="leading-[1.5] font-inter text-white/50 transition-colors duration-300">
+            <p className="   leading-[1.5]  mt-2 font-inter text-white/80 transition-colors duration-300">
               {currentLanguage === "en"
                 ? "Lowers the cost-of-care by shortening patient length of stay in the ICU unit"
                 : "يخفض تكلفة الرعاية من خلال تقليل مدة بقاء المريض في وحدة العناية المركزة"}

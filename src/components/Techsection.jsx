@@ -60,14 +60,7 @@ function Techsection() {
               className={`w-[400px] cursor-pointer relative z-10 mx-auto `}
             />
           </a>
-          <div
-            data-aos="fade-up"
-            data-aos-easing="ease-out-back"
-            data-aos-duration="1000"
-            data-aos-offset="100"
-            data-aos-mirror="true"
-            className="max-xs:-mt-1 flex items-center justify-center pb-2 max-w-[700px] leading-[1.3em] mx-auto text-center text-3xl px-3 font-inter font-medium max-sm:text-xl capitalize hero-heading"
-          ></div>
+          <div className="max-xs:-mt-1 flex items-center justify-center pb-2 max-w-[700px] leading-[1.3em] mx-auto text-center text-3xl px-3 font-inter font-medium max-sm:text-xl capitalize hero-heading"></div>
 
           {/* Background decorations */}
           <div className="min-h-[100px]">
@@ -80,7 +73,7 @@ function Techsection() {
       </div>
 
       <div>
-        <div className="relative flex flex-col mt-8 mx-auto justify-center items-center">
+        <div className="relative flex flex-col -mt-10 mx-auto justify-center items-center">
           {/* Mission Card */}
           <div className="sticky-1 relative pt-32 max-sm:pt-20 z-10 w-[670px] backdrop-blur-sm h-[550px] max-sm:h-[400px] border border-[#ffffff00] intro-card max-sm:w-[95%]">
             <img
@@ -102,7 +95,7 @@ function Techsection() {
 
             <h2
               className={`hero-heading px-6 max-sm:px-5 tracking-wide text-center font-normal mt-10 max-sm:mt-6 max-w-[550px] mx-auto text-3xl leading-[1.4em]
-                 max-sm:text-2xl font-inter capitalize `}
+                 max-sm:text-2xl font-inter `}
             >
               {currentContent.missionText}
             </h2>
@@ -136,7 +129,7 @@ function Techsection() {
               {currentContent.visionTitle}
             </p>
             <h2
-              className={`hero-heading !text-center px-5 max-sm:px-5 tracking-wide  font-normal mt-10 max-sm:mt-6 max-w-[550px] mx-auto text-3xl leading-[1.4em] max-sm:text-xl font-inter capitalize ${
+              className={`hero-heading !text-center px-5 max-sm:px-5 tracking-wide  font-normal mt-10 max-sm:mt-6 max-w-[550px] mx-auto text-3xl leading-[1.4em] max-sm:text-xl font-inter  ${
                 currentLanguage === "ar"
                   ? "direction-rtl leading-[2em]"
                   : "direction-ltr"

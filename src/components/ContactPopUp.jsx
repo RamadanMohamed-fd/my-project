@@ -202,6 +202,15 @@ function ContactPopUp({ st, handle }) {
 
   const handleStep = () => {
     if (step === 0) {
+      // Check if inquiry type is selected
+      if (!formData.inquiryType.trim()) {
+        // Show error if no inquiry type selected
+        setErrors((prev) => ({
+          ...prev,
+          inquiryType: currentContent.inquiryTypeRequired,
+        }));
+        return;
+      }
       setStep(1);
       return;
     }
@@ -247,7 +256,7 @@ function ContactPopUp({ st, handle }) {
       data-aos-mirror="true"
       className="mx-auto z-[100]  relative max-w-[700px] px-3 font-inter max-md:w-full"
     >
-      <div className="w-full flex   items-center justify-center px-5 py-12 bgH relative border border-[#ffffff00] intro-card">
+      <div className="w-full flex   items-center justify-center px-5 py-12 bgH relative border border-[#ffffff00] intro-card !overflow-visible">
         <div className="max-w-[450px]  max-[500px]:w-full mx-auto flex flex-col items-center max-[440px]:justify-end">
           {step === 0 && (
             <>
@@ -346,7 +355,7 @@ function ContactPopUp({ st, handle }) {
             </>
           )}
           {step < 3 && (
-            <div className="mt-5 w-[450px] max-[550px]:w-[350px] max-[440px]:w-[300px] max-[350px]:w-full mx-auto">
+            <div className="mt-0 w-[450px] max-[550px]:w-[350px] max-[440px]:w-[300px] max-[350px]:w-full mx-auto">
               <form className="w-full mt-8" onSubmit={handleSubmit}>
                 {step !== 0 && (
                   <div className="w-full">
@@ -358,78 +367,6 @@ function ContactPopUp({ st, handle }) {
                           : "w-0 h-0 overflow-hidden"
                       }`}
                     >
-                      {/* Inquiry Type */}
-                      <div className="mb-5" ref={inquiryTypeRef}>
-                        <label
-                          htmlFor="inquiryType"
-                          className="hero-heading mb-1 text-sm block font-semibold"
-                        >
-                          {currentContent.inquiryType}
-                        </label>
-                        <div className="relative">
-                          <div
-                            className="form-field h-[46px] w-full flex items-center justify-between cursor-pointer px-3"
-                            onClick={() => setInquiryTypeOpen((prev) => !prev)}
-                          >
-                            <span>
-                              {formData.inquiryType ||
-                                currentContent.selectInquiry}
-                            </span>
-                            <svg
-                              className={`w-4 h-4 transition-transform ${
-                                inquiryTypeOpen ? "rotate-180" : ""
-                              }`}
-                              fill="none"
-                              stroke="currentColor"
-                              viewBox="0 0 24 24"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth="2"
-                                d="M19 9l-7 7-7-7"
-                              ></path>
-                            </svg>
-                          </div>
-
-                          {inquiryTypeOpen && (
-                            <div className="absolute  left-0 right-0 space-y-1 mt-1 form-field rounded-lg !px-0 border shadow-xl overflow-hidden z-20">
-                              {inquiryTypeOptions.map((option) => (
-                                <div
-                                  key={option}
-                                  onClick={() => {
-                                    setFormData((prev) => ({
-                                      ...prev,
-                                      inquiryType: option,
-                                    }));
-                                    setInquiryTypeOpen(false);
-                                    if (errors.inquiryType) {
-                                      setErrors((prev) => ({
-                                        ...prev,
-                                        inquiryType: "",
-                                      }));
-                                    }
-                                  }}
-                                  className={`px-3 py-2 cursor-pointer hover:bg-violet-100 ${
-                                    formData.inquiryType === option
-                                      ? "bg-violet-500 text-white hover:text-black"
-                                      : ""
-                                  }`}
-                                >
-                                  {option}
-                                </div>
-                              ))}
-                            </div>
-                          )}
-                        </div>
-                        {errors.inquiryType && (
-                          <div className="text-xs text-red-400 mt-1">
-                            {errors.inquiryType}
-                          </div>
-                        )}
-                      </div>
-
                       {/* Name */}
                       <label
                         htmlFor="name"

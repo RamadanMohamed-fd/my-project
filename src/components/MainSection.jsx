@@ -47,7 +47,7 @@ function MainSection() {
     },
     {
       id: 5,
-      image: "header/5.jpg",
+      image: "header/55.jpg",
       title: {
         en: "Health Ministry Recognition",
         ar: "تقدير وزارة الصحة",
@@ -118,8 +118,8 @@ function MainSection() {
                 src={slide.image}
                 alt={content.title}
                 className={`w-full  h-full object-cover object-[right_-60px] ${
-                  slide.id === 5 ? "!object-center" : ""
-                }`}
+                  slide.id === 5 ? "!object-top" : ""
+                } `}
               />
 
               {/* LEFT/RIGHT OVERLAY */}

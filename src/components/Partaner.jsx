@@ -48,7 +48,7 @@ export default function AnimatedBeamMultipleOutputDemo({ className }) {
 
   return (
     <div
-      id="partners"
+      id="partaner"
       className="w-full pb-20 max-sm:pb-10 bgh5 px-3 relative"
       dir={isRTL ? "rtl" : "ltr"}
     >
@@ -69,13 +69,6 @@ export default function AnimatedBeamMultipleOutputDemo({ className }) {
       >
         <div className="max-w-4xl flex-col flex items-stretch justify-between">
           <div className="flex flex-wrap items-center gap-10 justify-center">
-            <Circle ref={div4Ref}>
-              <img
-                src="/images/p5.png"
-                alt="Logo"
-                className="w-[300px] max-sm:max-w-[250px] h-auto"
-              />
-            </Circle>
             <Circle ref={div2Ref}>
               <img
                 src="/images/p4.png"
@@ -83,6 +76,14 @@ export default function AnimatedBeamMultipleOutputDemo({ className }) {
                 className="w-[300px] max-sm:max-w-[250px] h-auto"
               />
             </Circle>
+            <Circle ref={div4Ref}>
+              <img
+                src="/images/p5.png"
+                alt="Logo"
+                className="w-[300px] max-sm:max-w-[250px] h-auto"
+              />
+            </Circle>
+
             <Circle ref={div1Ref} className="">
               <img
                 src="/images/p1.png"

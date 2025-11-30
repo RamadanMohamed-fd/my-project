@@ -38,7 +38,7 @@ function ImpactsSection() {
             height={212}
             className="w-auto h-auto group-hover:opacity-90 opacity-50 group-hover:scale-100 scale-95 ease-in duration-200 mx-auto"
           />
-          <p className="leading-[1.5] font-inter hero-heading transition-colors duration-300">
+          <p className="   leading-[1.5]  mt-2 font-inter text-white/80 transition-colors duration-300">
             {currentLanguage === "en"
               ? "Improving the quality of care by focusing on what matters"
               : "تحسين جودة الرعاية من خلال التركيز على ما يهم"}
@@ -55,7 +55,7 @@ function ImpactsSection() {
             <p className="text-3xl leading-[1.3] font-inter text-[#E3E3E3]">
               {currentLanguage === "en" ? "Error Reduction" : "تقليل الأخطاء"}
             </p>
-            <p className="leading-[1.5] font-inter hero-heading transition-colors duration-300">
+            <p className="   leading-[1.5]  mt-2 font-inter text-white/80 transition-colors duration-300">
               {currentLanguage === "en"
                 ? "Reducing clinical complications associated with manual calculation errors"
                 : "تقليل المضاعفات السريرية المرتبطة بأخطاء الحساب"}
@@ -84,7 +84,7 @@ function ImpactsSection() {
                   ? "Cost Management"
                   : "إدارة التكاليف"}
               </p>
-              <p className="leading-[1.5] max-w-[270px] mt-2 font-inter text-white/80 transition-colors duration-300">
+              <p className="   leading-[1.5]  mt-2 font-inter text-white/80 transition-colors duration-300">
                 {currentLanguage === "en"
                   ? "Minimizing hospitalization time and better managing costs in the Intensive Care Unit"
                   : "تقليل وقت الاستشفاء وإدارة التكاليف بشكل أفضل في وحدة العناية المركزة"}
@@ -115,7 +115,7 @@ function ImpactsSection() {
             <p className="text-3xl leading-[1.3] font-inter text-[#E3E3E3]">
               {currentLanguage === "en" ? "Research Resource" : "مورد البحث"}
             </p>
-            <p className="leading-[1.5] mt-2 font-inter text-white/80 transition-colors duration-300">
+            <p className="   leading-[1.5]  mt-2 font-inter text-white/80 transition-colors duration-300">
               {currentLanguage === "en"
                 ? "Serving as a valuable resource for future nutritional, epidemiological, and clinical research"
                 : "يعمل كمورد قيم لأبحاث التغذية والأوبئة والسريرية المستقبلية"}

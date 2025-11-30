@@ -188,14 +188,13 @@ function FeaturesSection() {
             {features[0].iconAlt[currentLanguage] || features[0].iconAlt.en}
           </p>
           <img
-            src="/e1.png"
+            src="/battery.png"
             alt="img"
             width={512}
-            height={212}
-            className="w-auto h-auto group-hover:opacity-90 opacity-50 group-hover:scale-100 scale-95 ease-in  duration-200  mx-auto"
+            height={512}
+            className="w-[80%] h-auto group-hover:opacity-90 opacity-50 group-hover:scale-100 scale-95 ease-in  duration-200  mx-auto"
           />
-
-          <p className="   leading-[1.5] font-inter hero-heading  transition-colors duration-300">
+          <p className="   leading-[1.5]  mt-2 font-inter text-white/80 transition-colors duration-300">
             {features[0].title[currentLanguage] || features[0].title.en}
           </p>
         </div>
@@ -209,7 +208,7 @@ function FeaturesSection() {
             <p className="text-3xl     leading-[1.3] font-inter text-[#E3E3E3]">
               {features[1].iconAlt[currentLanguage] || features[1].iconAlt.en}
             </p>
-            <p className="   leading-[1.5] font-inter hero-heading  transition-colors duration-300">
+            <p className="   leading-[1.5]  mt-2 font-inter text-white/80 transition-colors duration-300">
               {features[1].title[currentLanguage] || features[1].title.en}
             </p>
           </div>
@@ -232,7 +231,7 @@ function FeaturesSection() {
               <p className="text-3xl     leading-[1.3] font-inter text-[#E3E3E3]">
                 {features[2].iconAlt[currentLanguage] || features[2].iconAlt.en}
               </p>
-              <p className="   leading-[1.5] max-w-[270px] mt-2 font-inter text-white/80 transition-colors duration-300">
+              <p className="   leading-[1.5]  mt-2 font-inter text-white/80 transition-colors duration-300">
                 {features[2].title[currentLanguage] || features[2].title.en}
               </p>
             </div>
@@ -271,7 +270,7 @@ function FeaturesSection() {
             <p className="text-3xl     leading-[1.3] font-inter text-[#E3E3E3]">
               {features[4].iconAlt[currentLanguage] || features[4].iconAlt.en}
             </p>
-            <p className="   leading-[1.5] font-inter text-white/50 transition-colors duration-300">
+            <p className="   leading-[1.5]  mt-2 font-inter text-white/80 transition-colors duration-300">
               {features[4].title[currentLanguage] || features[4].title.en}
             </p>
           </div>
@@ -292,7 +291,7 @@ function FeaturesSection() {
             <p className="text-3xl     leading-[1.3] font-inter text-[#E3E3E3]">
               {features[5].iconAlt[currentLanguage] || features[5].iconAlt.en}
             </p>
-            <p className="   leading-[1.5] font-inter text-white/50 transition-colors duration-300">
+            <p className="   leading-[1.5]  mt-2 font-inter text-white/80 transition-colors duration-300">
               {features[5].title[currentLanguage] || features[5].title.en}
             </p>
           </div>

@@ -10,6 +10,7 @@
     "@tsparticles/react": "^3.0.0",
     "@tsparticles/slim": "^3.9.1",
     "aos": "^2.3.4",
+    "axios": "^1.13.2",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-router-dom": "^6.30.2",

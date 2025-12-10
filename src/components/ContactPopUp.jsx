@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useLanguage } from "../context/LanguageContext";
+import axios from "axios";
 
 function ContactPopUp({ st, handle }) {
   const { t, isRTL, currentLanguage } = useLanguage();
@@ -17,15 +18,15 @@ function ContactPopUp({ st, handle }) {
     phone: "",
     institution: "",
     hearAboutUs: "",
-    description: "",
-    inquiryType: "", // New field for inquiry type
+    message: "",
+    inquiryType: "",
   });
   const [errors, setErrors] = useState({});
 
   const content = {
     en: {
       ready: "Ready to Get Started?",
-      description:
+      message:
         "We're excited to help you bring your vision to life! Whether you have a question, need a quote, or want to discuss your project in detail, we're here to assist you. Fill out the form below, and our team will get back to you as soon as possible. Let's create something amazing together!",
       inquiryType: "What would you like to discuss?",
       selectInquiry: "Select inquiry type",
@@ -55,12 +56,12 @@ function ContactPopUp({ st, handle }) {
       institutionRequired: "Institution is required",
       hearAboutUsRequired: "Please select an option",
       inquiryTypeRequired: "Please select an inquiry type",
-      descriptionRequired: "Description is required",
+      messageRequired: "message is required",
       dropdownOptions: ["Google", "Social Media", "Friend/Colleague", "Other"],
     },
     ar: {
       ready: "مستعد للبدء؟",
-      description:
+      message:
         "نحن متحمسون لمساعدتك في تحقيق رؤيتك! سواء كان لديك سؤال، أو تحتاج إلى عرض سعر، أو تريد مناقشة مشروعك بالتفصيل، نحن هنا لمساعدتك. املأ النموذج أدناه، وسيعود فريقنا إليك في أقرب وقت ممكن. لنخلق شيئًا مذهلاً معًا!",
       inquiryType: "ما الذي ترغب في مناقشته؟",
       selectInquiry: "اختر نوع الاستفسار",
@@ -90,7 +91,7 @@ function ContactPopUp({ st, handle }) {
       institutionRequired: "المؤسسة مطلوبة",
       hearAboutUsRequired: "يرجى اختيار خيار",
       inquiryTypeRequired: "يرجى اختيار نوع الاستفسار",
-      descriptionRequired: "الوصف مطلوب",
+      messageRequired: "الوصف مطلوب",
       dropdownOptions: ["جوجل", "وسائل التواصل الاجتماعي", "صديق/زميل", "أخرى"],
     },
   };
@@ -136,8 +137,8 @@ function ContactPopUp({ st, handle }) {
     if (step === 2 && !formData.hearAboutUs.trim()) {
       newErrors.hearAboutUs = currentContent.hearAboutUsRequired;
     }
-    if (step === 2 && !formData.description.trim()) {
-      newErrors.description = currentContent.descriptionRequired;
+    if (step === 2 && !formData.message.trim()) {
+      newErrors.message = currentContent.messageRequired;
     }
 
     setErrors(newErrors);
@@ -170,28 +171,48 @@ function ContactPopUp({ st, handle }) {
       setSubmitting(true);
 
       try {
-        await new Promise((resolve) => setTimeout(resolve, 1500));
+        // Prepare payload with renamed fields
+        const payload = {
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          institution: formData.institution,
+          about: formData.hearAboutUs,
+          message: formData.message,
+          type: formData.inquiryType,
+        };
 
-        const isSuccess = Math.random() > 0.2;
+        // Send data to the PHP endpoint
+        const response = await axios.post(
+          "https://testinutrical.badee.com.sa/send-email.php",
+          payload
+        );
 
-        if (isSuccess) {
+        // Check if response contains {"status":"success"}
+        if (response.data && response.data.status === "success") {
+          // Success - show success message
           setSucess(true);
+
+          // Reset form data
           setFormData({
             name: "",
             email: "",
             phone: "",
             institution: "",
             hearAboutUs: "",
-            description: "",
+            message: "",
             inquiryType: "",
           });
-        } else {
-          setSucess(false);
-        }
 
-        setStep(3);
-      } catch (error) {
-        console.error("Error submitting the form:", error);
+          setStep(3);
+        } else {
+          // If response doesn't have status: "success", treat as failure
+          setSucess(false);
+          setStep(3);
+        }
+      } catch (err) {
+        // Error - show error message
+        console.error("Submission error:", err);
         setSucess(false);
         setStep(3);
       } finally {
@@ -216,7 +237,31 @@ function ContactPopUp({ st, handle }) {
     }
 
     if (step === 1) {
-      if (validateForm()) {
+      // Validate step 1 fields before moving to step 2
+      const newErrors = {};
+
+      if (!formData.name.trim()) newErrors.name = currentContent.nameRequired;
+
+      if (!formData.email.trim()) {
+        newErrors.email = currentContent.emailRequired;
+      } else if (!/^\S+@\S+\.\S+$/.test(formData.email)) {
+        newErrors.email = currentContent.invalidEmail;
+      }
+
+      if (!formData.phone.trim()) {
+        newErrors.phone = currentContent.phoneRequired;
+      } else if (!/^\+?[0-9]{7,15}$/.test(formData.phone)) {
+        newErrors.phone = currentContent.invalidPhone;
+      }
+
+      if (!formData.institution.trim()) {
+        newErrors.institution = currentContent.institutionRequired;
+      }
+
+      setErrors(newErrors);
+
+      // Only proceed if no errors
+      if (Object.keys(newErrors).length === 0) {
         setStep(2);
       }
     }
@@ -271,7 +316,7 @@ function ContactPopUp({ st, handle }) {
                 </h2>
               </div>
               <p className="text-sm max-[440px]:text-xs text-center text-white opacity-65 mx-auto py-5 px-3 font-medium">
-                {currentContent.description}
+                {currentContent.message}
               </p>
 
               {/* Inquiry Type Dropdown */}
@@ -542,23 +587,23 @@ function ContactPopUp({ st, handle }) {
 
                       <div className="mt-5">
                         <label
-                          htmlFor="description"
+                          htmlFor="message"
                           className="hero-heading mb-1 text-sm block font-semibold"
                         >
                           {currentContent.yourMessage}
                         </label>
                         <textarea
-                          id="description"
-                          name="description"
-                          value={formData.description}
+                          id="message"
+                          name="message"
+                          value={formData.message}
                           onChange={handleInputChange}
                           required
                           maxLength={5000}
                           className="form-field w-full py-2 h-[230px]"
                         ></textarea>
-                        {errors.description && (
+                        {errors.message && (
                           <div className="text-xs text-red-400 mt-1">
-                            {errors.description}
+                            {errors.message}
                           </div>
                         )}
                       </div>
@@ -627,7 +672,7 @@ function ContactPopUp({ st, handle }) {
                 alt={sucess ? "success" : "error"}
                 className="size-[128px] max-[440px]:size-24 mx-auto my-10"
               />
-              <p className="text-center text-white text-lg mb-8">
+              <p className="text-center text-white text-2xl mb-8 max-w-sm leading-relaxed">
                 {sucess
                   ? currentContent.successMessage
                   : currentContent.errorMessage}

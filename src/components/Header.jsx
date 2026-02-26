@@ -85,7 +85,7 @@ function Header() {
 
           {/* Login Button */}
           <a
-            href="https://inutrical.net/login"
+            href="https://inutrical.net/old/public/login"
             type="button"
             className="nav-link max-[950px]:w-full max-[950px]:h-[45px] relative z-[51] text-sm text-white font-inter cursor-pointer hover:opacity-80 transition-opacity duration-200 bg-transparent border-none outline-none"
           >
@@ -114,7 +114,7 @@ function Header() {
             />
           </a>
           <a
-            href="https://inutrical.net/login"
+            href="https://inutrical.net/old/public/login"
             type="button"
             className="nav-link  max-[950px]:h-[45px] relative z-[51] text-sm text-white font-inter cursor-pointer hover:opacity-80 transition-opacity duration-200 bg-transparent border-none outline-none"
           >

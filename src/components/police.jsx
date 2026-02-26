@@ -17,7 +17,7 @@ function PrivacyPolicy() {
       effectiveDate: "November 17, 2025",
 
       // Introduction
-      intro1: `This Privacy Statement describes the practices that iNutriCal Software (hereinafter "Software" or "we" or "our") follows with respect to the collection, use, and disclosure of information collected from our users ("user" or "you"). This Privacy Statement specifies how we maintain your privacy and protect the confidentiality of the information that we collect when you use our Website, at https://inutrical.net/login (the "Website").`,
+      intro1: `This Privacy Statement describes the practices that iNutriCal Software (hereinafter "Software" or "we" or "our") follows with respect to the collection, use, and disclosure of information collected from our users ("user" or "you"). This Privacy Statement specifies how we maintain your privacy and protect the confidentiality of the information that we collect when you use our Website, at https://inutrical.net/old/public/login (the "Website").`,
       intro2: `Our Company is committed to protecting the privacy and security of the personal information we receive and collect from you through this Website. We also believe in transparency and are committed to informing you about how we treat your personal information. This Privacy statement likewise applies to personal or medical information of patients provided by the User. This version of the Privacy statement is effective as of November 17, 2025.`,
 
       // Warning Notice
@@ -126,7 +126,7 @@ function PrivacyPolicy() {
       effectiveDate: "17 نوفمبر 2025",
 
       // Introduction
-      intro1: `يصف بيان الخصوصية هذا الممارسات التي تتبعها برمجيات iNutriCal (ويُشار إليها فيما بعد بـ "البرنامج" أو "نحن" أو "خاصتنا") فيما يتعلق بجمع المعلومات واستخدامها والإفصاح عنها من مستخدمينا ("المستخدم" أو "أنت"). يوضح هذا البيان كيف نحافظ على خصوصيتك ونحمي سرية المعلومات التي نجمعها عند استخدامك لموقعنا الإلكتروني على الرابط https://inutrical.net/login ("الموقع الإلكتروني").`,
+      intro1: `يصف بيان الخصوصية هذا الممارسات التي تتبعها برمجيات iNutriCal (ويُشار إليها فيما بعد بـ "البرنامج" أو "نحن" أو "خاصتنا") فيما يتعلق بجمع المعلومات واستخدامها والإفصاح عنها من مستخدمينا ("المستخدم" أو "أنت"). يوضح هذا البيان كيف نحافظ على خصوصيتك ونحمي سرية المعلومات التي نجمعها عند استخدامك لموقعنا الإلكتروني على الرابط https://inutrical.net/old/public/login ("الموقع الإلكتروني").`,
       intro2: `تلتزم شركتنا بحماية خصوصية وأمن المعلومات الشخصية التي نتلقاها ونجمعها منك عبر هذا الموقع الإلكتروني. نحن نؤمن بالشفافية وملتزمون بإبلاغك بكيفية التعامل مع معلوماتك الشخصية. ينطبق بيان الخصوصية هذا أيضًا على المعلومات الشخصية أو الطبية الخاصة بالمرضى التي يقدمها المستخدم. ويُعد هذا الإصدار من بيان الخصوصية ساريًا اعتبارًا من 17 نوفمبر 2025.`,
 
       // Warning Notice

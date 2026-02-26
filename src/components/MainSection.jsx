@@ -197,7 +197,7 @@ function MainSection() {
                       {/* LOGIN */}
                       <div className="border border-[#2d2641] group rounded-full min-w-[100px] linn h-[40px] cursor-pointer nav bgh relative backdrop-blur-sm">
                         <a
-                          href="https://inutrical.net/login"
+                          href="https://inutrical.net/old/public/login"
                           className="nav-link w-full flex items-center relative !z-[499] gap-3 h-full   text-sm text-white font-inter"
                         >
                           <p className="text-white text-sm">
